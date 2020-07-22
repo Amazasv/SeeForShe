@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class DialogDefault : MonoBehaviour
 {
     [SerializeField]
-    private Transform caster=null;
+    private Transform parent = null;
     [SerializeField]
     private bool hasLifeSpan = false;
     [SerializeField]
@@ -21,11 +21,16 @@ public class DialogDefault : MonoBehaviour
 
     private GameObject textObject;
 
-    public void Fire(EventChainSystem sys)
+    private void Awake()
     {
-        textObject = Instantiate(DialogPrefab, caster);
+        GetComponent<EventBase>().OnInvoke.AddListener(Fire);
+    }
+
+    public void Fire()
+    {
+        textObject = Instantiate(DialogPrefab, parent);
         textObject.GetComponentInChildren<Text>().text = content;
-        sys.AddQueue(next, false);
+        EventChainSystem.Instance.AddQueue(next, false);
         if (hasLifeSpan) Destroy(textObject, existTime);
     }
 }

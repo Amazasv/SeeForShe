@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.Events;
 
 
 public class DotsGC : MonoBehaviour
@@ -38,8 +38,8 @@ public class DotsGC : MonoBehaviour
     private Vector2 gridSize = Vector2.zero;
     [SerializeField]
     private Vector2 spacing = Vector2.zero;
-    [SerializeField]
-    private Vector2 gap = Vector2.zero;
+    //[SerializeField]
+    //private Vector2 gap = Vector2.zero;
     [SerializeField]
     private int maxInRow = 3;
     [SerializeField]
@@ -49,6 +49,7 @@ public class DotsGC : MonoBehaviour
     [SerializeField]
     private Vector2Int[] defaultNodePosition = null;
 
+    public UnityEvent OnVictory;
 
     private LineRenderer lineRenderer = null;
     private List<NodesNavigation> nodes = new List<NodesNavigation>();
@@ -182,7 +183,7 @@ public class DotsGC : MonoBehaviour
     {
         if (next == endNode)
         {
-            if (pathRecord.Count == nodes.Count - 2) SendMessageUpwards("GameVictory", SendMessageOptions.RequireReceiver);
+            if (pathRecord.Count == nodes.Count - 2) OnVictory.Invoke();
             else return;
         }
         currentNode.icon.GetComponent<Animator>().SetBool("Beat", false);

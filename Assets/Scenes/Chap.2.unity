@@ -130,6 +130,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 10357877}
+  - component: {fileID: 10357879}
   - component: {fileID: 10357878}
   m_Layer: 5
   m_Name: Event (4)
@@ -164,13 +165,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 1858643684872617332}
+  parent: {fileID: 1858643684872617333}
   hasLifeSpan: 0
   content: "\u5C31\u662F\u2026\u6211\u521A\u624D\u88AB\u4E00\u4E2A\u964C\u751F\u7537\u4EBA\u6478\u4E86\u4E00\u4E0B\u2026"
-  next: {fileID: 847543791}
+  next: {fileID: 847543792}
   existTime: 2
   DialogPrefab: {fileID: 4663636329570104477, guid: d5e71a16afee6074aab169ae726851b6,
     type: 3}
+--- !u!114 &10357879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10357876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &37832319
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,6 +196,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 37832320}
+  - component: {fileID: 37832322}
   - component: {fileID: 37832321}
   m_Layer: 5
   m_Name: Event (11)
@@ -214,13 +231,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 49236469}
+  parent: {fileID: 49236470}
   hasLifeSpan: 0
   content: "\u597D,\u8C22\u8C22\u4F60\uFF01"
-  next: {fileID: 680317862}
+  next: {fileID: 680317863}
   existTime: 2
   DialogPrefab: {fileID: 4663636329570104477, guid: d5e71a16afee6074aab169ae726851b6,
     type: 3}
+--- !u!114 &37832322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37832319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &46363105
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,6 +336,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 47494953}
+  - component: {fileID: 47494955}
   - component: {fileID: 47494954}
   m_Layer: 5
   m_Name: EventBranches (1)
@@ -338,17 +371,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc10442ad6ff2347a1e4d5c476c91ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 49236469}
   hasLifeSpan: 0
   branches:
-  - next: {fileID: 2048526348}
+  - next: {fileID: 2048526349}
     desc: "\u554A..\u6CA1\u4EC0\u4E48\uFF0C\u4F60\u8981\u7684\u53E3\u7EA2\uFF0C\u6211\u5E2E\u4F60\u4E70\u597D\u4E86\u3002"
-  - next: {fileID: 281171524}
+  - next: {fileID: 281171525}
     desc: "\u5C31\u662F\uFF0C\u6709\u4E00\u4E2A\u7537\u7684\u2026\u8FCE\u9762\u8D70\u8FC7\u6765\uFF0C\u8D81\u6211\u6CA1\u6CE8\u610F\u4E00\u62AC\u624B\uFF0C\u5C31\u6293\u4E86\u6211\u7684\u80F8...\u4F46\u662F\u4ED6\u4E5F\u5BF9\u6211\u8BF4\u4E86\u5BF9\u4E0D\u8D77\uFF0C\u6211\u4E0D\u77E5\u9053\u8FD9\u662F\u4E0D\u662F\u5C5E\u4E8E\u6027\u9A9A\u6270\uFF0C\u4E5F\u4E0D\u77E5\u9053\u73B0\u5728\u8BE5\u600E\u4E48\u529E..."
   btnPrefab: {fileID: 7754285048448561405, guid: 2e9f1911b60907244b1871f6f2a86609,
     type: 3}
   btnCanvas: {fileID: 1251777840}
+  caster: {fileID: 49236469}
   DialogPrefab: {fileID: 0}
+--- !u!114 &47494955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47494952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &49236469
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,6 +488,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 93596919}
+  - component: {fileID: 93596921}
   - component: {fileID: 93596920}
   m_Layer: 5
   m_Name: Event (6)
@@ -474,13 +523,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 1858643684872617332}
+  parent: {fileID: 1858643684872617333}
   hasLifeSpan: 0
   content: "\u6CA1\u6709\u5988\u5988\u2026\u4F60\u60F3\u591A\u4E86\uFF0C\u662F\u6211\u670B\u53CB\uFF0C\u4E0D\u662F\u6211\u5566\u2026"
-  next: {fileID: 128750261}
+  next: {fileID: 128750262}
   existTime: 2
   DialogPrefab: {fileID: 4663636329570104477, guid: d5e71a16afee6074aab169ae726851b6,
     type: 3}
+--- !u!114 &93596921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93596918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &96446880
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,6 +905,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 128750260}
+  - component: {fileID: 128750262}
   - component: {fileID: 128750261}
   m_Layer: 5
   m_Name: Event (7)
@@ -875,13 +940,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 1858643684872617332}
+  parent: {fileID: 1858643684872617333}
   hasLifeSpan: 0
   content: "\u4F60\u5440\uFF0C\u4E0D\u8981\u8BA9\u5988\u5988\u62C5\u5FC3\u77E5\u9053\u5417\uFF01\u53EA\u6709\u4E0D\u542C\u5988\u5988\u8BDD\u7684\u5B69\u5B50\u624D\u4F1A\u9047\u5230\u8FD9\u6837\u7684\u4E8B\u60C5\uFF0C\u4F60\u4E0D\u8981\u53BB\u4E0D\u5B89\u5168\u7684\u5730\u65B9\uFF0C\u6309\u65F6\u56DE\u5BB6\u5C31\u4E0D\u4F1A\u9047\u5230\u7684\uFF01"
-  next: {fileID: 645550335}
+  next: {fileID: 645550336}
   existTime: 2
   DialogPrefab: {fileID: 5092594654272138529, guid: f50cc25eb68573c47bbaee3076ccab6d,
     type: 3}
+--- !u!114 &128750262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128750259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &128857911
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,6 +971,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 128857912}
+  - component: {fileID: 128857914}
   - component: {fileID: 128857913}
   m_Layer: 5
   m_Name: Event (10)
@@ -925,13 +1006,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 5895585848568127115}
+  parent: {fileID: 5895585848568127114}
   hasLifeSpan: 0
   content: "\u55EF\uFF0C\u597D\u7684"
-  next: {fileID: 222042255}
+  next: {fileID: 222042256}
   existTime: 2
   DialogPrefab: {fileID: 4663636329570104477, guid: d5e71a16afee6074aab169ae726851b6,
     type: 3}
+--- !u!114 &128857914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128857911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &148034558
 GameObject:
   m_ObjectHideFlags: 0
@@ -1013,11 +1109,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7137037881163181906, guid: 5b6ffc077810eac4484c89f7b85c8311,
-        type: 3}
-      propertyPath: m_SceneBindings.Array.data[0].value
-      value: 
-      objectReference: {fileID: 1991692266}
     - target: {fileID: 7137037881163181907, guid: 5b6ffc077810eac4484c89f7b85c8311,
         type: 3}
       propertyPath: m_Name
@@ -1061,7 +1152,7 @@ PrefabInstance:
     - target: {fileID: 7137037881163181933, guid: 5b6ffc077810eac4484c89f7b85c8311,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7137037881163181933, guid: 5b6ffc077810eac4484c89f7b85c8311,
         type: 3}
@@ -1417,6 +1508,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 207288924}
+  - component: {fileID: 207288926}
   - component: {fileID: 207288925}
   m_Layer: 5
   m_Name: Event (7)
@@ -1451,13 +1543,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 5895585848568127115}
+  parent: {fileID: 5895585848568127114}
   hasLifeSpan: 0
   content: "\uFF01\uFF01\uFF01\u771F\u7684\u5417\uFF01\uFF01\u592A\u611F\u8C22\u4F60\u4E86\uFF01\uFF01\u671F\u5F85\u4F60\u65E9\u70B9\u513F\u56DE\u6765\u54C8\u54C8\u54C8\u54C8"
-  next: {fileID: 939826000}
+  next: {fileID: 939826001}
   existTime: 2
   DialogPrefab: {fileID: 545089513860059982, guid: 6ce12327af19f7446a88f876970c3341,
     type: 3}
+--- !u!114 &207288926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207288923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &208193447
 GameObject:
   m_ObjectHideFlags: 0
@@ -1467,6 +1574,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 208193448}
+  - component: {fileID: 208193450}
   - component: {fileID: 208193449}
   m_Layer: 5
   m_Name: EventBranches (2)
@@ -1501,17 +1609,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc10442ad6ff2347a1e4d5c476c91ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 1858643684872617332}
   hasLifeSpan: 0
   branches:
-  - next: {fileID: 1002169946}
+  - next: {fileID: 1002169947}
     desc: "\u53EF\u662F\u5988\uFF0C\u6211\u597D\u4E0D\u7518\u5FC3\uFF0C\u6211\u4E0D\u60F3\u8FD9\u4E48\u8D70\u4E86\uFF0C\u6211\u60F3\u8981\u6293\u4F4F\u4ED6\uFF01"
-  - next: {fileID: 1117147749}
+  - next: {fileID: 1117147750}
     desc: "\u54CE\u2026\u2026\u597D\u5427"
   btnPrefab: {fileID: 7754285048448561405, guid: 2e9f1911b60907244b1871f6f2a86609,
     type: 3}
   btnCanvas: {fileID: 2137056950}
+  caster: {fileID: 0}
   DialogPrefab: {fileID: 0}
+--- !u!114 &208193450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208193447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &222042253
 GameObject:
   m_ObjectHideFlags: 0
@@ -1521,6 +1644,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 222042254}
+  - component: {fileID: 222042256}
   - component: {fileID: 222042255}
   m_Layer: 5
   m_Name: EndEvent
@@ -1555,21 +1679,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6ec627fce60484478a6cefa44c12a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 1858643684872617332}
+--- !u!114 &222042256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222042253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   OnInvoke:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1057156895}
-        m_MethodName: ForceTransition
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 6
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!224 &222236407 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2294903539467541027, guid: b9a8b654aa22aad488c9f149eecba792,
@@ -1585,6 +1709,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 239791247}
+  - component: {fileID: 239791249}
   - component: {fileID: 239791248}
   m_Layer: 5
   m_Name: EventBranches (1)
@@ -1619,17 +1744,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc10442ad6ff2347a1e4d5c476c91ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 5895585848568127115}
   hasLifeSpan: 0
   branches:
-  - next: {fileID: 1870418602}
+  - next: {fileID: 1870418603}
     desc: "\u554A..\u6CA1\u4EC0\u4E48\uFF0C\u4F60\u8981\u7684\u53E3\u7EA2\uFF0C\u6211\u5E2E\u4F60\u4E70\u597D\u4E86\u3002"
-  - next: {fileID: 1120353391}
+  - next: {fileID: 1120353392}
     desc: "\u5C31\u662F\uFF0C\u6709\u4E00\u4E2A\u7537\u7684\u2026\u8FCE\u9762\u8D70\u8FC7\u6765\uFF0C\u8D81\u6211\u6CA1\u6CE8\u610F\u4E00\u62AC\u624B\uFF0C\u5C31\u6293\u4E86\u6211\u7684\u80F8...\u4F46\u662F\u4ED6\u4E5F\u5BF9\u6211\u8BF4\u4E86\u5BF9\u4E0D\u8D77\uFF0C\u6211\u4E0D\u77E5\u9053\u8FD9\u662F\u4E0D\u662F\u5C5E\u4E8E\u6027\u9A9A\u6270\uFF0C\u4E5F\u4E0D\u77E5\u9053\u73B0\u5728\u8BE5\u600E\u4E48\u529E..."
   btnPrefab: {fileID: 7754285048448561405, guid: 2e9f1911b60907244b1871f6f2a86609,
     type: 3}
   btnCanvas: {fileID: 1393862962}
+  caster: {fileID: 0}
   DialogPrefab: {fileID: 0}
+--- !u!114 &239791249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239791246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &275040941
 GameObject:
   m_ObjectHideFlags: 0
@@ -1713,6 +1853,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 281171523}
+  - component: {fileID: 281171525}
   - component: {fileID: 281171524}
   m_Layer: 5
   m_Name: Event (8)
@@ -1747,13 +1888,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 49236469}
+  parent: {fileID: 49236470}
   hasLifeSpan: 0
   content: "\u5C31\u662F\uFF0C\u6709\u4E00\u4E2A\u7537\u7684\u2026\u8FCE\u9762\u8D70\u8FC7\u6765\uFF0C\u8D81\u6211\u6CA1\u6CE8\u610F\u4E00\u62AC\u624B\uFF0C\u5C31\u6293\u4E86\u6211\u7684\u80F8...\u4F46\u662F\u4ED6\u4E5F\u5BF9\u6211\u8BF4\u4E86\u5BF9\u4E0D\u8D77\uFF0C\u6211\u4E0D\u77E5\u9053\u8FD9\u662F\u4E0D\u662F\u5C5E\u4E8E\u6027\u9A9A\u6270\uFF0C\u4E5F\u4E0D\u77E5\u9053\u73B0\u5728\u8BE5\u600E\u4E48\u529E..."
-  next: {fileID: 1324850934}
+  next: {fileID: 1324850935}
   existTime: 2
   DialogPrefab: {fileID: 4663636329570104477, guid: d5e71a16afee6074aab169ae726851b6,
     type: 3}
+--- !u!114 &281171525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281171522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &367479784
 GameObject:
   m_ObjectHideFlags: 0
@@ -1996,7 +2152,7 @@ Transform:
   - {fileID: 1291711422}
   - {fileID: 584528825}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &415411558
 GameObject:
@@ -2270,6 +2426,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 435873398}
+  - component: {fileID: 435873400}
   - component: {fileID: 435873399}
   m_Layer: 5
   m_Name: Event (7)
@@ -2304,13 +2461,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 49236469}
+  parent: {fileID: 49236470}
   hasLifeSpan: 0
   content: "\uFF01\uFF01\uFF01\u771F\u7684\u5417\uFF01\uFF01\u592A\u611F\u8C22\u4F60\u4E86\uFF01\uFF01\u671F\u5F85\u4F60\u65E9\u70B9\u513F\u56DE\u6765\u54C8\u54C8\u54C8\u54C8"
-  next: {fileID: 1977710293}
+  next: {fileID: 1977710294}
   existTime: 2
   DialogPrefab: {fileID: 3182918218648749311, guid: e31286d7a3b48da4ca8aafccbf97f0dd,
     type: 3}
+--- !u!114 &435873400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435873397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &445567301
 GameObject:
   m_ObjectHideFlags: 0
@@ -2623,6 +2795,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 508193501}
+  - component: {fileID: 508193503}
   - component: {fileID: 508193502}
   m_Layer: 5
   m_Name: EventBranches (0)
@@ -2657,17 +2830,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc10442ad6ff2347a1e4d5c476c91ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 49236469}
   hasLifeSpan: 0
   branches:
-  - next: {fileID: 1432217666}
+  - next: {fileID: 1432217667}
     desc: "\u8981\u662F\u4F60\u88AB\u522B\u4EBA\u6478\u4E86\u4E00\u4E0B\uFF0C\u4F60\u4F1A\u600E\u4E48\u529E\u5462\uFF1F"
-  - next: {fileID: 686575812}
+  - next: {fileID: 686575813}
     desc: "\u6211..\u6211\u88AB\u4EBA\u6478\u4E86\u4E00\u4E0BQAQ..."
   btnPrefab: {fileID: 7754285048448561405, guid: 2e9f1911b60907244b1871f6f2a86609,
     type: 3}
   btnCanvas: {fileID: 1251777840}
+  caster: {fileID: 49236469}
   DialogPrefab: {fileID: 0}
+--- !u!114 &508193503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508193500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &522603180
 GameObject:
   m_ObjectHideFlags: 0
@@ -2752,6 +2940,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 523979491}
+  - component: {fileID: 523979493}
   - component: {fileID: 523979492}
   m_Layer: 5
   m_Name: EventBranches (1)
@@ -2786,17 +2975,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc10442ad6ff2347a1e4d5c476c91ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 1858643684872617332}
   hasLifeSpan: 0
   branches:
-  - next: {fileID: 10357878}
+  - next: {fileID: 10357879}
     desc: "\u5C31\u662F\u2026\u6211\u521A\u624D\u88AB\u4E00\u4E2A\u964C\u751F\u7537\u4EBA\u6478\u4E86\u4E00\u4E0B\u2026"
-  - next: {fileID: 93596920}
+  - next: {fileID: 93596921}
     desc: "\u6CA1\u6709\u5988\u5988\u2026\u4F60\u60F3\u591A\u4E86\uFF0C\u662F\u6211\u670B\u53CB\uFF0C\u4E0D\u662F\u6211\u5566\u2026"
   btnPrefab: {fileID: 7754285048448561405, guid: 2e9f1911b60907244b1871f6f2a86609,
     type: 3}
   btnCanvas: {fileID: 2137056950}
+  caster: {fileID: 0}
   DialogPrefab: {fileID: 0}
+--- !u!114 &523979493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523979490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &529161043
 GameObject:
   m_ObjectHideFlags: 0
@@ -2806,6 +3010,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 529161044}
+  - component: {fileID: 529161046}
   - component: {fileID: 529161045}
   m_Layer: 5
   m_Name: EventBranches (4)
@@ -2840,15 +3045,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc10442ad6ff2347a1e4d5c476c91ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 1858643684872617332}
   hasLifeSpan: 0
   branches:
-  - next: {fileID: 1167898471}
+  - next: {fileID: 1167898472}
     desc: "\u53EF\u662F\u2026\u2026"
   btnPrefab: {fileID: 7754285048448561405, guid: 2e9f1911b60907244b1871f6f2a86609,
     type: 3}
   btnCanvas: {fileID: 2137056950}
+  caster: {fileID: 0}
   DialogPrefab: {fileID: 0}
+--- !u!114 &529161046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529161043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!224 &531640965 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2294903539467541027, guid: b9a8b654aa22aad488c9f149eecba792,
@@ -3127,6 +3347,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 615952697}
+  - component: {fileID: 615952699}
   - component: {fileID: 615952698}
   m_Layer: 5
   m_Name: Event (4)
@@ -3161,13 +3382,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 5895585848568127115}
+  parent: {fileID: 5895585848568127114}
   hasLifeSpan: 0
   content: "\u6211..\u6211\u88AB\u4EBA\u6478\u4E86\u4E00\u4E0BQAQ..."
-  next: {fileID: 1648681313}
+  next: {fileID: 1648681314}
   existTime: 2
   DialogPrefab: {fileID: 4663636329570104477, guid: d5e71a16afee6074aab169ae726851b6,
     type: 3}
+--- !u!114 &615952699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615952696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &645550333
 GameObject:
   m_ObjectHideFlags: 0
@@ -3177,6 +3413,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 645550334}
+  - component: {fileID: 645550336}
   - component: {fileID: 645550335}
   m_Layer: 5
   m_Name: EventBranches (3)
@@ -3211,114 +3448,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc10442ad6ff2347a1e4d5c476c91ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 1858643684872617332}
   hasLifeSpan: 0
   branches:
-  - next: {fileID: 1117147749}
+  - next: {fileID: 1117147750}
     desc: "\u54CE\u2026\u2026\u597D\u5427"
   btnPrefab: {fileID: 7754285048448561405, guid: 2e9f1911b60907244b1871f6f2a86609,
     type: 3}
   btnCanvas: {fileID: 2137056950}
+  caster: {fileID: 0}
   DialogPrefab: {fileID: 0}
---- !u!1 &650796663
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 650796667}
-  - component: {fileID: 650796666}
-  - component: {fileID: 650796665}
-  - component: {fileID: 650796664}
-  m_Layer: 5
-  m_Name: Canvas
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &650796664
+--- !u!114 &645550336
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 650796663}
+  m_GameObject: {fileID: 645550333}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
---- !u!114 &650796665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 650796663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 750, y: 1334}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
---- !u!223 &650796666
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 650796663}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 1
-  m_TargetDisplay: 0
---- !u!224 &650796667
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 650796663}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
-  m_Children:
-  - {fileID: 1991692265}
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &667119645
 GameObject:
   m_ObjectHideFlags: 0
@@ -3457,6 +3610,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 671819503}
+  - component: {fileID: 671819505}
   - component: {fileID: 671819504}
   m_Layer: 5
   m_Name: Event (3)
@@ -3491,13 +3645,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 1858643684872617332}
+  parent: {fileID: 1858643684872617333}
   hasLifeSpan: 0
   content: "\u50BB\u5B69\u5B50\u4F60\u8FD9\u662F\u8BF4\u7684\u4EC0\u4E48\u8BDD\uFF1F\u4F60\u88AB\u4EBA\u6B3A\u8D1F\u4E86\u5417\uFF1F\uFF1F"
-  next: {fileID: 523979492}
+  next: {fileID: 523979493}
   existTime: 2
   DialogPrefab: {fileID: 5092594654272138529, guid: f50cc25eb68573c47bbaee3076ccab6d,
     type: 3}
+--- !u!114 &671819505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671819502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &680317860
 GameObject:
   m_ObjectHideFlags: 0
@@ -3507,6 +3676,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 680317861}
+  - component: {fileID: 680317863}
   - component: {fileID: 680317862}
   m_Layer: 5
   m_Name: EndEvent
@@ -3541,21 +3711,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6ec627fce60484478a6cefa44c12a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 1858643684872617332}
+--- !u!114 &680317863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680317860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   OnInvoke:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 169214058}
-        m_MethodName: ForceTransition
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 6
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &686575810
 GameObject:
   m_ObjectHideFlags: 0
@@ -3565,6 +3735,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 686575811}
+  - component: {fileID: 686575813}
   - component: {fileID: 686575812}
   m_Layer: 5
   m_Name: Event (4)
@@ -3599,13 +3770,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 49236469}
+  parent: {fileID: 49236470}
   hasLifeSpan: 0
   content: "\u6211..\u6211\u88AB\u4EBA\u6478\u4E86\u4E00\u4E0BQAQ..."
-  next: {fileID: 1518850359}
+  next: {fileID: 1518850360}
   existTime: 2
   DialogPrefab: {fileID: 4663636329570104477, guid: d5e71a16afee6074aab169ae726851b6,
     type: 3}
+--- !u!114 &686575813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686575810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &696163407 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2294903539467541028, guid: b9a8b654aa22aad488c9f149eecba792,
@@ -3695,6 +3881,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 709780822}
+  - component: {fileID: 709780824}
   - component: {fileID: 709780823}
   m_Layer: 5
   m_Name: EventBranches (4)
@@ -3729,15 +3916,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc10442ad6ff2347a1e4d5c476c91ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 5895585848568127115}
   hasLifeSpan: 0
   branches:
-  - next: {fileID: 1883804160}
+  - next: {fileID: 1883804161}
     desc: "\u597D\u5427..."
   btnPrefab: {fileID: 7754285048448561405, guid: 2e9f1911b60907244b1871f6f2a86609,
     type: 3}
   btnCanvas: {fileID: 1393862962}
+  caster: {fileID: 0}
   DialogPrefab: {fileID: 0}
+--- !u!114 &709780824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709780821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &720732369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3788,7 +3990,7 @@ PrefabInstance:
     - target: {fileID: 5705563430170011084, guid: 8ce0927ef16ce9847ae05a91c55ea65d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5705563430170011084, guid: 8ce0927ef16ce9847ae05a91c55ea65d,
         type: 3}
@@ -3805,11 +4007,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5705563430170011085, guid: 8ce0927ef16ce9847ae05a91c55ea65d,
-        type: 3}
-      propertyPath: m_SceneBindings.Array.data[1].value
-      value: 
-      objectReference: {fileID: 1991692266}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ce0927ef16ce9847ae05a91c55ea65d, type: 3}
 --- !u!1 &729381742
@@ -3821,6 +4018,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 729381743}
+  - component: {fileID: 729381745}
   - component: {fileID: 729381744}
   m_Layer: 5
   m_Name: Event (13)
@@ -3855,13 +4053,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 1858643684872617332}
+  parent: {fileID: 1858643684872617333}
   hasLifeSpan: 0
   content: "\u54CE\u2026\u2026\u597D\u5427"
   next: {fileID: 2082002735}
   existTime: 2
   DialogPrefab: {fileID: 4663636329570104477, guid: d5e71a16afee6074aab169ae726851b6,
     type: 3}
+--- !u!114 &729381745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729381742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &738679031
 GameObject:
   m_ObjectHideFlags: 0
@@ -4133,6 +4346,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 810707136}
+  - component: {fileID: 810707138}
   - component: {fileID: 810707137}
   m_Layer: 5
   m_Name: Event (11)
@@ -4167,13 +4381,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 1858643684872617332}
+  parent: {fileID: 1858643684872617333}
   hasLifeSpan: 0
   content: "\u542C\u5988\u7684\uFF01\u8FD9\u79CD\u4E8B\u7531\u4E0D\u5F97\u4F60\u3002"
-  next: {fileID: 1378317559}
+  next: {fileID: 1378317560}
   existTime: 2
   DialogPrefab: {fileID: 5092594654272138529, guid: f50cc25eb68573c47bbaee3076ccab6d,
     type: 3}
+--- !u!114 &810707138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810707135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &819707299
 GameObject:
   m_ObjectHideFlags: 0
@@ -4361,6 +4590,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 847543790}
+  - component: {fileID: 847543792}
   - component: {fileID: 847543791}
   m_Layer: 5
   m_Name: Event (5)
@@ -4395,13 +4625,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 1858643684872617332}
+  parent: {fileID: 1858643684872617333}
   hasLifeSpan: 0
   content: "\u6211\u65E9\u5C31\u8BF4\u4E0D\u8981\u4E00\u4E2A\u4EBA\u51FA\u53BB\u65C5\u884C\uFF01\u4F60\u73B0\u5728\u5728\u54EA\u91CC\uFF1F\u7ED9\u6211\u7ACB\u523B\u56DE\u6765\uFF01"
-  next: {fileID: 208193449}
+  next: {fileID: 208193450}
   existTime: 2
   DialogPrefab: {fileID: 5092594654272138529, guid: f50cc25eb68573c47bbaee3076ccab6d,
     type: 3}
+--- !u!114 &847543792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847543789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &853021223
 GameObject:
   m_ObjectHideFlags: 0
@@ -4695,6 +4940,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 939825999}
+  - component: {fileID: 939826001}
   - component: {fileID: 939826000}
   m_Layer: 5
   m_Name: EventBranches (3)
@@ -4729,15 +4975,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc10442ad6ff2347a1e4d5c476c91ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 5895585848568127115}
   hasLifeSpan: 0
   branches:
-  - next: {fileID: 128857913}
+  - next: {fileID: 128857914}
     desc: "\u55EF\uFF0C\u597D\u7684"
   btnPrefab: {fileID: 7754285048448561405, guid: 2e9f1911b60907244b1871f6f2a86609,
     type: 3}
   btnCanvas: {fileID: 1393862962}
+  caster: {fileID: 0}
   DialogPrefab: {fileID: 0}
+--- !u!114 &939826001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939825998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &956682549
 GameObject:
   m_ObjectHideFlags: 0
@@ -4836,6 +5097,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1002169945}
+  - component: {fileID: 1002169947}
   - component: {fileID: 1002169946}
   m_Layer: 5
   m_Name: Event (8)
@@ -4870,13 +5132,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 1858643684872617332}
+  parent: {fileID: 1858643684872617333}
   hasLifeSpan: 0
   content: "\u53EF\u662F\u5988\uFF0C\u6211\u597D\u4E0D\u7518\u5FC3\uFF0C\u6211\u4E0D\u60F3\u8FD9\u4E48\u8D70\u4E86\uFF0C\u6211\u60F3\u8981\u6293\u4F4F\u4ED6\uFF01"
-  next: {fileID: 1007521527}
+  next: {fileID: 1007521528}
   existTime: 2
   DialogPrefab: {fileID: 4663636329570104477, guid: d5e71a16afee6074aab169ae726851b6,
     type: 3}
+--- !u!114 &1002169947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002169944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1005442002
 GameObject:
   m_ObjectHideFlags: 0
@@ -4960,6 +5237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1007521526}
+  - component: {fileID: 1007521528}
   - component: {fileID: 1007521527}
   m_Layer: 5
   m_Name: Event (9)
@@ -4994,14 +5272,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 1858643684872617332}
+  parent: {fileID: 1858643684872617333}
   hasLifeSpan: 0
   content: "\u5988\u5988\uFF1A\u201C\u4E0D\u7BA1\u4F60\u60F3\u5E72\u4EC0\u4E48\u90FD\u8981\u5B89\u5168\u7B2C\u4E00\uFF0C\u4F60\u5148\u7ED9\u6211\u56DE\u6765\uFF0C\u7B49\u4F60\u56DE\u6765\u4E86\u6211\u4EEC\u518D\u60F3\u529E\u6CD5\uFF0C\u8C01\u77E5\u9053\u4ED6\u4F1A\u4E0D\u4F1A\u8FD8\u5728\u4EC0\u4E48
     \u5730\u65B9\u7B49\u7740\u4F60\u5462\uFF1F\u4F60\u662F\u8981\u8BA9\u5988\u5988\u62C5\u5FC3\u6B7B\u5417\uFF01"
-  next: {fileID: 529161045}
+  next: {fileID: 529161046}
   existTime: 2
   DialogPrefab: {fileID: 5092594654272138529, guid: f50cc25eb68573c47bbaee3076ccab6d,
     type: 3}
+--- !u!114 &1007521528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007521525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1023285372
 GameObject:
   m_ObjectHideFlags: 0
@@ -5011,6 +5304,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1023285373}
+  - component: {fileID: 1023285375}
   - component: {fileID: 1023285374}
   m_Layer: 5
   m_Name: EventBranches (0)
@@ -5045,17 +5339,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc10442ad6ff2347a1e4d5c476c91ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 5895585848568127115}
   hasLifeSpan: 0
   branches:
-  - next: {fileID: 1603293370}
+  - next: {fileID: 1603293371}
     desc: "\u5C0FA\uFF0C\u8981\u662F\u4F60\u88AB\u522B\u4EBA\u6478\u4E86\u4E00\u4E0B\uFF0C\u4F60\u4F1A\u600E\u4E48\u529E\u5462\uFF1F"
-  - next: {fileID: 615952698}
+  - next: {fileID: 615952699}
     desc: "\u6211..\u6211\u88AB\u4EBA\u6478\u4E86\u4E00\u4E0BQAQ..."
   btnPrefab: {fileID: 7754285048448561405, guid: 2e9f1911b60907244b1871f6f2a86609,
     type: 3}
   btnCanvas: {fileID: 1393862962}
+  caster: {fileID: 0}
   DialogPrefab: {fileID: 0}
+--- !u!114 &1023285375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023285372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1042525542
 GameObject:
   m_ObjectHideFlags: 0
@@ -5065,6 +5374,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1042525543}
+  - component: {fileID: 1042525545}
   - component: {fileID: 1042525544}
   m_Layer: 5
   m_Name: Event (0)
@@ -5099,13 +5409,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 1858643684872617332}
+  parent: {fileID: 1858643684872617333}
   hasLifeSpan: 0
   content: "\u5988\u2026\u521A\u624D\u6211\u9047\u5230\u4E86\u4E0D\u592A\u597D\u7684\u4E8B\u60C5\u2026"
-  next: {fileID: 2092216365}
+  next: {fileID: 2092216366}
   existTime: 2
   DialogPrefab: {fileID: 4663636329570104477, guid: d5e71a16afee6074aab169ae726851b6,
     type: 3}
+--- !u!114 &1042525545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042525542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1045958348
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5611,6 +5936,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1081445483}
+  - component: {fileID: 1081445485}
   - component: {fileID: 1081445484}
   m_Layer: 5
   m_Name: Event (3)
@@ -5645,13 +5971,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 5895585848568127115}
+  parent: {fileID: 5895585848568127114}
   hasLifeSpan: 0
   content: "\u6211\u554A\uFF0C\u6211\u600E\u4E48\u53EF\u80FD\u4F1A\u88AB\u6478\uFF0C\u6211\u53C8\u7A7F\u7684\u4E0D\u66B4\u9732\u54C8\u54C8\u54C8\u54C8\u54C8\u54C8\u54C8\u54C8\u54C8\u54C8\uFF0C\u600E\u4E48\u5566\uFF01\u4F60\u662F\u53C8\u770B\u5230\u4EC0\u4E48\u516B\u5366\u4E86\u5417\uFF01"
-  next: {fileID: 239791248}
+  next: {fileID: 239791249}
   existTime: 2
   DialogPrefab: {fileID: 545089513860059982, guid: 6ce12327af19f7446a88f876970c3341,
     type: 3}
+--- !u!114 &1081445485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081445482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1087779005
 GameObject:
   m_ObjectHideFlags: 0
@@ -5661,6 +6002,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1087779006}
+  - component: {fileID: 1087779008}
   - component: {fileID: 1087779007}
   m_Layer: 5
   m_Name: Event (10)
@@ -5695,13 +6037,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 49236469}
+  parent: {fileID: 49236470}
   hasLifeSpan: 0
   content: "\u55EF\uFF0C\u597D\u7684"
-  next: {fileID: 680317862}
+  next: {fileID: 680317863}
   existTime: 2
   DialogPrefab: {fileID: 4663636329570104477, guid: d5e71a16afee6074aab169ae726851b6,
     type: 3}
+--- !u!114 &1087779008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087779005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1097026904
 GameObject:
   m_ObjectHideFlags: 0
@@ -5902,6 +6259,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1117147748}
+  - component: {fileID: 1117147750}
   - component: {fileID: 1117147749}
   m_Layer: 5
   m_Name: Event (12)
@@ -5936,13 +6294,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 1858643684872617332}
+  parent: {fileID: 1858643684872617333}
   hasLifeSpan: 0
   content: "\u54CE\u2026\u2026\u597D\u5427"
-  next: {fileID: 729381744}
+  next: {fileID: 2082002735}
   existTime: 2
   DialogPrefab: {fileID: 4663636329570104477, guid: d5e71a16afee6074aab169ae726851b6,
     type: 3}
+--- !u!114 &1117147750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117147747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1120353389
 GameObject:
   m_ObjectHideFlags: 0
@@ -5952,6 +6325,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1120353390}
+  - component: {fileID: 1120353392}
   - component: {fileID: 1120353391}
   m_Layer: 5
   m_Name: Event (8)
@@ -5986,13 +6360,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 5895585848568127115}
+  parent: {fileID: 5895585848568127114}
   hasLifeSpan: 0
   content: "\u5C31\u662F\uFF0C\u6709\u4E00\u4E2A\u7537\u7684\u2026\u8FCE\u9762\u8D70\u8FC7\u6765\uFF0C\u8D81\u6211\u6CA1\u6CE8\u610F\u4E00\u62AC\u624B\uFF0C\u5C31\u6293\u4E86\u6211\u7684\u80F8...\u4F46\u662F\u4ED6\u4E5F\u5BF9\u6211\u8BF4\u4E86\u5BF9\u4E0D\u8D77\uFF0C\u6211\u4E0D\u77E5\u9053\u8FD9\u662F\u4E0D\u662F\u5C5E\u4E8E\u6027\u9A9A\u6270\uFF0C\u4E5F\u4E0D\u77E5\u9053\u73B0\u5728\u8BE5\u600E\u4E48\u529E..."
-  next: {fileID: 1798807259}
+  next: {fileID: 1798807260}
   existTime: 2
   DialogPrefab: {fileID: 4663636329570104477, guid: d5e71a16afee6074aab169ae726851b6,
     type: 3}
+--- !u!114 &1120353392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120353389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1147409966
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6232,6 +6621,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1167898470}
+  - component: {fileID: 1167898472}
   - component: {fileID: 1167898471}
   m_Layer: 5
   m_Name: Event (10)
@@ -6266,13 +6656,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 1858643684872617332}
+  parent: {fileID: 1858643684872617333}
   hasLifeSpan: 0
   content: "\u53EF\u662F\u2026\u2026"
-  next: {fileID: 810707137}
+  next: {fileID: 810707138}
   existTime: 2
   DialogPrefab: {fileID: 4663636329570104477, guid: d5e71a16afee6074aab169ae726851b6,
     type: 3}
+--- !u!114 &1167898472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167898469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1188185006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6454,7 +6859,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1232242006
 GameObject:
@@ -6831,7 +7236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultGap: 2
-  StartEvent: {fileID: 1593665571}
+  StartEvent: {fileID: 1593665572}
 --- !u!1 &1272219192
 GameObject:
   m_ObjectHideFlags: 0
@@ -7537,6 +7942,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1324850933}
+  - component: {fileID: 1324850935}
   - component: {fileID: 1324850934}
   m_Layer: 5
   m_Name: Event (9)
@@ -7571,13 +7977,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 49236469}
+  parent: {fileID: 49236470}
   hasLifeSpan: 0
   content: "\u8FD9\u5C31\u662F\u6027\u9A9A\u6270\uFF0C\u4F60\u5148\u522B\u614C\uFF0C\u5148\u53BB\u4EBA\u591A\u7684\u5730\u65B9\uFF0C\u6216\u8005\u662F\u670D\u52A1\u53F0\uFF0C\u4FDD\u8BC1\u81EA\u5DF1\u7684\u5B89\u5168\uFF0C\u6211\u5E2E\u4F60\u67E5\u67E5\u9047\u5230\u8FD9\u79CD\u60C5\u51B5\u5E94\u8BE5\u600E\u4E48\u529E\u3002"
-  next: {fileID: 2139457085}
+  next: {fileID: 2139457086}
   existTime: 2
   DialogPrefab: {fileID: 3182918218648749311, guid: e31286d7a3b48da4ca8aafccbf97f0dd,
     type: 3}
+--- !u!114 &1324850935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324850932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1364962799
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8005,6 +8426,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1378317558}
+  - component: {fileID: 1378317560}
   - component: {fileID: 1378317559}
   m_Layer: 5
   m_Name: EventBranches (5)
@@ -8039,15 +8461,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc10442ad6ff2347a1e4d5c476c91ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 1858643684872617332}
   hasLifeSpan: 0
   branches:
-  - next: {fileID: 729381744}
+  - next: {fileID: 729381745}
     desc: "\u54CE\u2026\u2026\u597D\u5427"
   btnPrefab: {fileID: 7754285048448561405, guid: 2e9f1911b60907244b1871f6f2a86609,
     type: 3}
   btnCanvas: {fileID: 2137056950}
+  caster: {fileID: 0}
   DialogPrefab: {fileID: 0}
+--- !u!114 &1378317560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378317557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1393862961
 GameObject:
   m_ObjectHideFlags: 0
@@ -8352,6 +8789,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1432217665}
+  - component: {fileID: 1432217667}
   - component: {fileID: 1432217666}
   m_Layer: 5
   m_Name: Event (2)
@@ -8386,13 +8824,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 49236469}
+  parent: {fileID: 49236470}
   hasLifeSpan: 0
   content: "\u8981\u662F\u4F60\u88AB\u522B\u4EBA\u6478\u4E86\u4E00\u4E0B\uFF0C\u4F60\u4F1A\u600E\u4E48\u529E\u5462\uFF1F"
-  next: {fileID: 1658646515}
+  next: {fileID: 1658646516}
   existTime: 2
   DialogPrefab: {fileID: 4663636329570104477, guid: d5e71a16afee6074aab169ae726851b6,
     type: 3}
+--- !u!114 &1432217667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432217664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1457698909
 GameObject:
   m_ObjectHideFlags: 0
@@ -8853,6 +9306,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1492859978}
+  - component: {fileID: 1492859980}
   - component: {fileID: 1492859979}
   m_Layer: 5
   m_Name: Event (1)
@@ -8887,13 +9341,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 5895585848568127115}
+  parent: {fileID: 5895585848568127114}
   hasLifeSpan: 0
   content: "\u600E\u4E48\u5566\uFF1F"
-  next: {fileID: 1023285374}
+  next: {fileID: 1023285375}
   existTime: 2
   DialogPrefab: {fileID: 545089513860059982, guid: 6ce12327af19f7446a88f876970c3341,
     type: 3}
+--- !u!114 &1492859980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492859977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1498958720
 GameObject:
   m_ObjectHideFlags: 0
@@ -9008,6 +9477,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1518850358}
+  - component: {fileID: 1518850360}
   - component: {fileID: 1518850359}
   m_Layer: 5
   m_Name: Event (5)
@@ -9042,13 +9512,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 49236469}
+  parent: {fileID: 49236470}
   hasLifeSpan: 0
   content: "\u6211\u53BB\uFF01\u4F60\u522B\u614C\uFF0C\u5148\u7ED9\u6211\u8BF4\u4E0B\u600E\u4E48\u56DE\u4E8B\uFF01"
-  next: {fileID: 1766868813}
+  next: {fileID: 1766868814}
   existTime: 2
   DialogPrefab: {fileID: 3182918218648749311, guid: e31286d7a3b48da4ca8aafccbf97f0dd,
     type: 3}
+--- !u!114 &1518850360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518850357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1524489339
 GameObject:
   m_ObjectHideFlags: 0
@@ -9244,6 +9729,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1593665570}
+  - component: {fileID: 1593665572}
   - component: {fileID: 1593665571}
   m_Layer: 5
   m_Name: Event (0)
@@ -9278,13 +9764,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 49236469}
+  parent: {fileID: 49236470}
   hasLifeSpan: 0
   content: "\u5C0FB\uFF01\uFF01\uFF01"
-  next: {fileID: 1834443020}
+  next: {fileID: 1834443021}
   existTime: 2
   DialogPrefab: {fileID: 4663636329570104477, guid: d5e71a16afee6074aab169ae726851b6,
     type: 3}
+--- !u!114 &1593665572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593665569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1603293368
 GameObject:
   m_ObjectHideFlags: 0
@@ -9294,6 +9795,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1603293369}
+  - component: {fileID: 1603293371}
   - component: {fileID: 1603293370}
   m_Layer: 5
   m_Name: Event (2)
@@ -9328,13 +9830,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 5895585848568127115}
+  parent: {fileID: 5895585848568127114}
   hasLifeSpan: 0
   content: "\u5C0FA\uFF0C\u8981\u662F\u4F60\u88AB\u522B\u4EBA\u6478\u4E86\u4E00\u4E0B\uFF0C\u4F60\u4F1A\u600E\u4E48\u529E\u5462\uFF1F"
-  next: {fileID: 1081445484}
+  next: {fileID: 1081445485}
   existTime: 2
   DialogPrefab: {fileID: 4663636329570104477, guid: d5e71a16afee6074aab169ae726851b6,
     type: 3}
+--- !u!114 &1603293371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603293368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1605377096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9617,6 +10134,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1648681312}
+  - component: {fileID: 1648681314}
   - component: {fileID: 1648681313}
   m_Layer: 5
   m_Name: Event (5)
@@ -9651,13 +10169,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 5895585848568127115}
+  parent: {fileID: 5895585848568127114}
   hasLifeSpan: 0
   content: "\uFF1F\uFF1F\uFF1F\u600E\u4E48\u56DE\u4E8B\uFF1F\uFF1F"
-  next: {fileID: 1876281018}
+  next: {fileID: 1876281019}
   existTime: 2
   DialogPrefab: {fileID: 545089513860059982, guid: 6ce12327af19f7446a88f876970c3341,
     type: 3}
+--- !u!114 &1648681314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648681311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1656634697
 GameObject:
   m_ObjectHideFlags: 0
@@ -9667,6 +10200,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1656634698}
+  - component: {fileID: 1656634700}
   - component: {fileID: 1656634699}
   m_Layer: 5
   m_Name: Event (0)
@@ -9701,13 +10235,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 5895585848568127115}
+  parent: {fileID: 5895585848568127114}
   hasLifeSpan: 0
   content: "\u5C0FA\uFF01\uFF01\uFF01"
-  next: {fileID: 1492859979}
+  next: {fileID: 1492859980}
   existTime: 2
   DialogPrefab: {fileID: 4663636329570104477, guid: d5e71a16afee6074aab169ae726851b6,
     type: 3}
+--- !u!114 &1656634700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656634697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1658646513
 GameObject:
   m_ObjectHideFlags: 0
@@ -9717,6 +10266,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1658646514}
+  - component: {fileID: 1658646516}
   - component: {fileID: 1658646515}
   m_Layer: 5
   m_Name: Event (3)
@@ -9751,13 +10301,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 49236469}
+  parent: {fileID: 49236470}
   hasLifeSpan: 0
   content: "\u6211\u554A\uFF0C\u6211\u600E\u4E48\u53EF\u80FD\u4F1A\u88AB\u6478\uFF0C\u6211\u53C8\u7A7F\u7684\u4E0D\u66B4\u9732\u54C8\u54C8\u54C8\u54C8\u54C8\u54C8\u54C8\u54C8\u54C8\u54C8\uFF0C\u600E\u4E48\u5566\uFF01\u4F60\u662F\u53C8\u770B\u5230\u4EC0\u4E48\u516B\u5366\u4E86\u5417\uFF01"
-  next: {fileID: 47494954}
+  next: {fileID: 47494955}
   existTime: 2
   DialogPrefab: {fileID: 3182918218648749311, guid: e31286d7a3b48da4ca8aafccbf97f0dd,
     type: 3}
+--- !u!114 &1658646516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658646513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1679561350
 GameObject:
   m_ObjectHideFlags: 0
@@ -10116,7 +10681,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultGap: 2
-  StartEvent: {fileID: 1042525544}
+  StartEvent: {fileID: 1042525545}
 --- !u!1 &1731910137
 GameObject:
   m_ObjectHideFlags: 0
@@ -10331,6 +10896,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1766868812}
+  - component: {fileID: 1766868814}
   - component: {fileID: 1766868813}
   m_Layer: 5
   m_Name: EventBranches (2)
@@ -10365,15 +10931,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc10442ad6ff2347a1e4d5c476c91ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 49236469}
   hasLifeSpan: 0
   branches:
-  - next: {fileID: 281171524}
+  - next: {fileID: 281171525}
     desc: "\u5C31\u662F\uFF0C\u6709\u4E00\u4E2A\u7537\u7684\u2026\u8FCE\u9762\u8D70\u8FC7\u6765\uFF0C\u8D81\u6211\u6CA1\u6CE8\u610F\u4E00\u62AC\u624B\uFF0C\u5C31\u6293\u4E86\u6211\u7684\u80F8...\u4F46\u662F\u4ED6\u4E5F\u5BF9\u6211\u8BF4\u4E86\u5BF9\u4E0D\u8D77\uFF0C\u6211\u4E0D\u77E5\u9053\u8FD9\u662F\u4E0D\u662F\u5C5E\u4E8E\u6027\u9A9A\u6270\uFF0C\u4E5F\u4E0D\u77E5\u9053\u73B0\u5728\u8BE5\u600E\u4E48\u529E..."
   btnPrefab: {fileID: 7754285048448561405, guid: 2e9f1911b60907244b1871f6f2a86609,
     type: 3}
   btnCanvas: {fileID: 1251777840}
+  caster: {fileID: 49236469}
   DialogPrefab: {fileID: 0}
+--- !u!114 &1766868814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766868811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1768011272 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2294903539467541028, guid: b9a8b654aa22aad488c9f149eecba792,
@@ -10483,6 +11064,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1791679181}
+  - component: {fileID: 1791679183}
   - component: {fileID: 1791679182}
   m_Layer: 5
   m_Name: Event (2)
@@ -10517,13 +11099,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 1858643684872617332}
+  parent: {fileID: 1858643684872617333}
   hasLifeSpan: 0
   content: "\u5988\u5988\uFF0C\u8981\u662F\u4F60\u88AB\u522B\u4EBA\u6478\u4E86\u4E00\u4E0B\uFF0C\u4F60\u4F1A\u600E\u4E48\u529E\u5462\uFF1F"
-  next: {fileID: 671819504}
+  next: {fileID: 671819505}
   existTime: 2
   DialogPrefab: {fileID: 4663636329570104477, guid: d5e71a16afee6074aab169ae726851b6,
     type: 3}
+--- !u!114 &1791679183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791679180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!224 &1798246708 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2294903539467541027, guid: b9a8b654aa22aad488c9f149eecba792,
@@ -10539,6 +11136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1798807258}
+  - component: {fileID: 1798807260}
   - component: {fileID: 1798807259}
   m_Layer: 5
   m_Name: Event (9)
@@ -10573,13 +11171,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 5895585848568127115}
+  parent: {fileID: 5895585848568127114}
   hasLifeSpan: 0
   content: "\u8BF6\uFF0C\u4F60\u522B\u60F3\u4E86\uFF0C\u5FEB\u56DE\u6765\u5427\uFF0C\u591A\u4E00\u4E8B\u4E0D\u5982\u5C11\u4E00\u4E8B\uFF0C\u53CD\u6B63\u4F60\u73B0\u5728\u4E5F\u627E\u4E0D\u5230\u4ED6\u4E86\u3002"
-  next: {fileID: 709780823}
+  next: {fileID: 709780824}
   existTime: 2
   DialogPrefab: {fileID: 545089513860059982, guid: 6ce12327af19f7446a88f876970c3341,
     type: 3}
+--- !u!114 &1798807260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798807257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1834443018
 GameObject:
   m_ObjectHideFlags: 0
@@ -10589,6 +11202,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1834443019}
+  - component: {fileID: 1834443021}
   - component: {fileID: 1834443020}
   m_Layer: 5
   m_Name: Event (1)
@@ -10623,13 +11237,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 49236469}
+  parent: {fileID: 49236470}
   hasLifeSpan: 0
   content: "\u600E\u4E48\u5566\uFF1F"
-  next: {fileID: 508193502}
+  next: {fileID: 508193503}
   existTime: 2
   DialogPrefab: {fileID: 3182918218648749311, guid: e31286d7a3b48da4ca8aafccbf97f0dd,
     type: 3}
+--- !u!114 &1834443021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834443018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1870418600
 GameObject:
   m_ObjectHideFlags: 0
@@ -10639,6 +11268,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1870418601}
+  - component: {fileID: 1870418603}
   - component: {fileID: 1870418602}
   m_Layer: 5
   m_Name: Event (6)
@@ -10673,13 +11303,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 5895585848568127115}
+  parent: {fileID: 5895585848568127114}
   hasLifeSpan: 0
   content: "\u554A..\u6CA1\u4EC0\u4E48\uFF0C\u4F60\u8981\u7684\u53E3\u7EA2\uFF0C\u6211\u5E2E\u4F60\u4E70\u597D\u4E86\u3002"
-  next: {fileID: 207288925}
+  next: {fileID: 207288926}
   existTime: 2
   DialogPrefab: {fileID: 4663636329570104477, guid: d5e71a16afee6074aab169ae726851b6,
     type: 3}
+--- !u!114 &1870418603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870418600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1875377066
 GameObject:
   m_ObjectHideFlags: 0
@@ -10860,6 +11505,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1876281017}
+  - component: {fileID: 1876281019}
   - component: {fileID: 1876281018}
   m_Layer: 5
   m_Name: EventBranches (2)
@@ -10894,15 +11540,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc10442ad6ff2347a1e4d5c476c91ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 5895585848568127115}
   hasLifeSpan: 0
   branches:
-  - next: {fileID: 1120353391}
+  - next: {fileID: 1120353392}
     desc: "\u53EF\u662F\u5988\uFF0C\u6211\u597D\u4E0D\u7518\u5FC3\uFF0C\u6211\u4E0D\u60F3\u8FD9\u4E48\u8D70\u4E86\uFF0C\u6211\u60F3\u8981\u6293\u4F4F\u4ED6\uFF01"
   btnPrefab: {fileID: 7754285048448561405, guid: 2e9f1911b60907244b1871f6f2a86609,
     type: 3}
   btnCanvas: {fileID: 1393862962}
+  caster: {fileID: 0}
   DialogPrefab: {fileID: 0}
+--- !u!114 &1876281019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876281016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1883804158
 GameObject:
   m_ObjectHideFlags: 0
@@ -10912,6 +11573,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1883804159}
+  - component: {fileID: 1883804161}
   - component: {fileID: 1883804160}
   m_Layer: 5
   m_Name: Event (11)
@@ -10946,13 +11608,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 5895585848568127115}
+  parent: {fileID: 5895585848568127114}
   hasLifeSpan: 0
   content: "\u597D\u5427..."
-  next: {fileID: 222042255}
+  next: {fileID: 222042256}
   existTime: 2
   DialogPrefab: {fileID: 4663636329570104477, guid: d5e71a16afee6074aab169ae726851b6,
     type: 3}
+--- !u!114 &1883804161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883804158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1888196223
 GameObject:
   m_ObjectHideFlags: 0
@@ -10962,6 +11639,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1888196224}
+  - component: {fileID: 1888196226}
   - component: {fileID: 1888196225}
   m_Layer: 5
   m_Name: EventBranches (0)
@@ -10996,17 +11674,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc10442ad6ff2347a1e4d5c476c91ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 1858643684872617332}
   hasLifeSpan: 0
   branches:
-  - next: {fileID: 1791679182}
+  - next: {fileID: 1791679183}
     desc: "\u5988\u5988\uFF0C\u8981\u662F\u4F60\u88AB\u522B\u4EBA\u6478\u4E86\u4E00\u4E0B\uFF0C\u4F60\u4F1A\u600E\u4E48\u529E\u5462\uFF1F"
-  - next: {fileID: 10357878}
+  - next: {fileID: 10357879}
     desc: "\u5C31\u662F\u2026\u6211\u521A\u624D\u88AB\u4E00\u4E2A\u964C\u751F\u7537\u4EBA\u6478\u4E86\u4E00\u4E0B\u2026"
   btnPrefab: {fileID: 7754285048448561405, guid: 2e9f1911b60907244b1871f6f2a86609,
     type: 3}
   btnCanvas: {fileID: 2137056950}
+  caster: {fileID: 0}
   DialogPrefab: {fileID: 0}
+--- !u!114 &1888196226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888196223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1896539969
 GameObject:
   m_ObjectHideFlags: 0
@@ -11184,7 +11877,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1909153011
 GameObject:
@@ -11296,6 +11989,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1977710292}
+  - component: {fileID: 1977710294}
   - component: {fileID: 1977710293}
   m_Layer: 5
   m_Name: EventBranches (3)
@@ -11330,15 +12024,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc10442ad6ff2347a1e4d5c476c91ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 49236469}
   hasLifeSpan: 0
   branches:
-  - next: {fileID: 1087779007}
+  - next: {fileID: 1087779008}
     desc: "\u55EF\uFF0C\u597D\u7684"
   btnPrefab: {fileID: 7754285048448561405, guid: 2e9f1911b60907244b1871f6f2a86609,
     type: 3}
   btnCanvas: {fileID: 1251777840}
+  caster: {fileID: 49236469}
   DialogPrefab: {fileID: 0}
+--- !u!114 &1977710294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977710291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1980134625
 GameObject:
   m_ObjectHideFlags: 0
@@ -11470,100 +12179,6 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!1 &1991692264
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1991692265}
-  - component: {fileID: 1991692268}
-  - component: {fileID: 1991692267}
-  - component: {fileID: 1991692266}
-  m_Layer: 5
-  m_Name: TrasitionCanvas
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1991692265
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1991692264}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 650796667}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &1991692266
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1991692264}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1991692267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1991692264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 0
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1991692268
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1991692264}
-  m_CullTransparentMesh: 0
 --- !u!1 &2003093246
 GameObject:
   m_ObjectHideFlags: 0
@@ -11787,6 +12402,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2048526347}
+  - component: {fileID: 2048526349}
   - component: {fileID: 2048526348}
   m_Layer: 5
   m_Name: Event (6)
@@ -11821,13 +12437,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 49236469}
+  parent: {fileID: 49236470}
   hasLifeSpan: 0
   content: "\u554A..\u6CA1\u4EC0\u4E48\uFF0C\u4F60\u8981\u7684\u53E3\u7EA2\uFF0C\u6211\u5E2E\u4F60\u4E70\u597D\u4E86\u3002"
-  next: {fileID: 435873399}
+  next: {fileID: 435873400}
   existTime: 2
   DialogPrefab: {fileID: 4663636329570104477, guid: d5e71a16afee6074aab169ae726851b6,
     type: 3}
+--- !u!114 &2048526349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048526346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2076393278
 GameObject:
   m_ObjectHideFlags: 0
@@ -11890,7 +12521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultGap: 2
-  StartEvent: {fileID: 1656634699}
+  StartEvent: {fileID: 1656634700}
 --- !u!1 &2082002733
 GameObject:
   m_ObjectHideFlags: 0
@@ -11931,10 +12562,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2082002733}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6ec627fce60484478a6cefa44c12a90, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 1858643684872617332}
   OnInvoke:
     m_PersistentCalls:
       m_Calls:
@@ -11944,7 +12574,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 6
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -12176,6 +12806,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2092216364}
+  - component: {fileID: 2092216366}
   - component: {fileID: 2092216365}
   m_Layer: 5
   m_Name: Event (1)
@@ -12210,13 +12841,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f336145923832434d9876af16bf02eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 1858643684872617332}
+  parent: {fileID: 1858643684872617333}
   hasLifeSpan: 0
   content: "\u600E\u4E48\u4E86\u5B9D\u8D1D\uFF0C\u4F60\u73B0\u5728\u5728\u54EA\uFF1F"
-  next: {fileID: 1888196225}
+  next: {fileID: 1888196226}
   existTime: 2
   DialogPrefab: {fileID: 5092594654272138529, guid: f50cc25eb68573c47bbaee3076ccab6d,
     type: 3}
+--- !u!114 &2092216366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092216363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2098773585
 GameObject:
   m_ObjectHideFlags: 0
@@ -12259,7 +12905,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 300}
+  m_SizeDelta: {x: 0, y: 1070}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &2098773587
 MonoBehaviour:
@@ -12535,6 +13181,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2139457084}
+  - component: {fileID: 2139457086}
   - component: {fileID: 2139457085}
   m_Layer: 5
   m_Name: EventBranches (4)
@@ -12569,15 +13216,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc10442ad6ff2347a1e4d5c476c91ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caster: {fileID: 49236469}
   hasLifeSpan: 0
   branches:
-  - next: {fileID: 37832321}
+  - next: {fileID: 37832322}
     desc: "\u597D,\u8C22\u8C22\u4F60\uFF01"
   btnPrefab: {fileID: 7754285048448561405, guid: 2e9f1911b60907244b1871f6f2a86609,
     type: 3}
   btnCanvas: {fileID: 1251777840}
+  caster: {fileID: 49236469}
   DialogPrefab: {fileID: 0}
+--- !u!114 &2139457086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139457083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f26d96bc71d44e91d4be9f23471d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &402021971492397772
 PrefabInstance:
   m_ObjectHideFlags: 0

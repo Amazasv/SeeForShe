@@ -14,6 +14,6 @@ public class EventBase : MonoBehaviour
     }
     public void InvokeEvent()
     {
-        //OnInvoke.Invoke(sys);
+        OnInvoke.Invoke();
     }
 }

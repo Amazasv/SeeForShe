@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EventChainSystem : MonoBehaviour
 {
+    public static EventChainSystem Instance = null;
+
     [SerializeField]
     private float defaultGap = 2.0f;
     [SerializeField]
@@ -11,11 +13,22 @@ public class EventChainSystem : MonoBehaviour
 
     private void OnEnable()
     {
-        AddQueue(StartEvent, false);
+        if (Instance == null)
+        {
+            Instance = this;
+            AddQueue(StartEvent, false);
+        }
+        else Debug.Log("too many EventChainSystem");
+
     }
 
     public void AddQueue(EventBase dialog, bool immediate = false)
     {
+        if (dialog == null)
+        {
+            Debug.Log("null event");
+            return;
+        }
         StartCoroutine(CreateDialog(dialog, immediate ? 0.0f : defaultGap));
     }
 
@@ -27,6 +40,7 @@ public class EventChainSystem : MonoBehaviour
 
     private void OnDisable()
     {
+        Instance = null;
         StopAllCoroutines();
     }
 }
