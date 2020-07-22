@@ -27,7 +27,7 @@ public class CtrlSpawnByClue : MonoBehaviour
     {
         spawnScript.enabled = false;
         image.raycastTarget = false;
-        if (GC_5.clueCollected[clueIndex] || GC_5.clueCollected[optional])
+        if (GC_5.Instance.GetFlag(clueIndex) || GC_5.Instance.GetFlag(optional))
         {
             if (greater && GameManager.Instance.time >= 19 * 60 + 30)
             {

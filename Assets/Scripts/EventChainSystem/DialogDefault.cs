@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class DialogDefault : EventBase
+
+[RequireComponent(typeof(EventBase))]
+public class DialogDefault : MonoBehaviour
 {
+    [SerializeField]
+    private Transform caster=null;
     [SerializeField]
     private bool hasLifeSpan = false;
     [SerializeField]
@@ -17,9 +21,9 @@ public class DialogDefault : EventBase
 
     private GameObject textObject;
 
-    public override void InvokeEvent()
+    public void Fire(EventChainSystem sys)
     {
-        textObject = Instantiate(DialogPrefab, caster.transform);
+        textObject = Instantiate(DialogPrefab, caster);
         textObject.GetComponentInChildren<Text>().text = content;
         sys.AddQueue(next, false);
         if (hasLifeSpan) Destroy(textObject, existTime);

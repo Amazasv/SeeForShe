@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PressAnywhere))]
+[RequireComponent(typeof(JumpScene))]
 
 public class GC_1_1 : MonoBehaviour
 {
@@ -11,12 +11,12 @@ public class GC_1_1 : MonoBehaviour
 
     private int currentStep = 0;
     private InfoManager infoManager = null;
-    private PressAnywhere pressAnywhere = null;
+    private JumpScene pressAnywhere = null;
 
     private void Awake()
     {
         infoManager = GetComponentInChildren<InfoManager>();
-        pressAnywhere = GetComponent<PressAnywhere>();
+        pressAnywhere = GetComponent<JumpScene>();
     }
 
     private void OnEnable()

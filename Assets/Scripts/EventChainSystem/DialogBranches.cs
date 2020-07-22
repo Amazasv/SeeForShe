@@ -5,8 +5,10 @@ using UnityEngine.UI;
 using System;
 
 
-public class DialogBranches : EventBase
+public class DialogBranches : MonoBehaviour
 {
+    [SerializeField]
+    private Transform caster = null;
     [SerializeField]
     private bool hasLifeSpan = false;
 
@@ -27,13 +29,21 @@ public class DialogBranches : EventBase
 
     private GameObject textObject;
     private List<GameObject> optionList = new List<GameObject>();
-    public override void InvokeEvent()
+    public void Fire()
+    {
+        ShowMessage();
+        ShowOptions();
+    }
+    private void ShowMessage()
     {
         if (DialogPrefab)
         {
             textObject = Instantiate(DialogPrefab, caster.transform);
             textObject.GetComponent<Text>().text = "...";
         }
+    }
+    private void ShowOptions()
+    {
         foreach (Branch branch in branches)
         {
             GameObject t = Instantiate(btnPrefab, btnCanvas);
@@ -48,6 +58,6 @@ public class DialogBranches : EventBase
         foreach (GameObject tmp in optionList) Destroy(tmp);
         optionList.Clear();
         if (hasLifeSpan) Destroy(textObject);
-        sys.AddQueue(target, true);
+        //sys.AddQueue(target, true);
     }
 }

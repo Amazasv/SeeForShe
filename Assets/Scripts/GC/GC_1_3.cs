@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-[RequireComponent(typeof(PressAnywhere))]
+[RequireComponent(typeof(JumpScene))]
 public class GC_1_3 : MonoBehaviour
 {
     [SerializeField]
@@ -11,11 +11,11 @@ public class GC_1_3 : MonoBehaviour
     private List<Draggable> items=new List<Draggable>();
 
     private int currentStep = 0;
-    private PressAnywhere press = null;
+    private JumpScene press = null;
 
     private void Awake()
     {
-        press = GetComponent<PressAnywhere>();
+        press = GetComponent<JumpScene>();
     }
 
     private void OnEnable()

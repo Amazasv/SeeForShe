@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-[RequireComponent(typeof(PressAnywhere))]
+[RequireComponent(typeof(JumpScene))]
 public class GC_2_2_2 : MonoBehaviour
 {
     [SerializeField]
@@ -20,13 +20,13 @@ public class GC_2_2_2 : MonoBehaviour
     private GameObject hint = null;
 
 
-    private PressAnywhere pressAnywhere;
+    private JumpScene pressAnywhere;
 
     // Update is called once per frame
 
     private void Awake()
     {
-        pressAnywhere = GetComponent<PressAnywhere>();
+        pressAnywhere = GetComponent<JumpScene>();
     }
 
     void Update()

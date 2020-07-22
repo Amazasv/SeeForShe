@@ -23,6 +23,6 @@ public class CtrlBtnByClue : MonoBehaviour
     }
     public void UpdateButton()
     {
-        btn.interactable = GC_5.clueCollected[needClueIndex];
+        btn.interactable = GC_5.Instance.GetFlag(needClueIndex);
     }
 }

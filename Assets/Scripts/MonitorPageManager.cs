@@ -13,4 +13,9 @@ public class MonitorPageManager : MonoBehaviour
         if (GetClue) GetClue.SetActive(true);
     }
 
+    public void CloseClue()
+    {
+        GetClue.SetActive(false);
+    }
+
 }

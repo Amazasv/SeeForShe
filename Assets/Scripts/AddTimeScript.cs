@@ -7,10 +7,10 @@ public class AddTimeScript : MonoBehaviour
     [SerializeField]
     private int value = 10;
     [SerializeField]
-    private bool enableAddTime = false;
+    private bool AddOnEnable = false;
     private void OnEnable()
     {
-        if (enableAddTime) AddTime();
+        if (AddOnEnable) AddTime();
     }
 
     public void AddTime()

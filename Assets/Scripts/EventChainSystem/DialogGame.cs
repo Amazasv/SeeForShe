@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class DialogGame : EventBase
+public class DialogGame : MonoBehaviour
 {
+    [SerializeField]
+    private Transform caster=null;
     [SerializeField]
     private EventBase next = null;
     [SerializeField]
@@ -11,14 +13,14 @@ public class DialogGame : EventBase
 
     private GameObject textObject;
 
-    public override void InvokeEvent()
+    public void InvokeEvent()
     {
-        textObject = Instantiate(DialogPrefab, caster.transform);
+        textObject = Instantiate(DialogPrefab, caster);
         textObject.GetComponent<Text>().text = "...";
     }
     private void Complete()
     {
         Destroy(textObject);
-        sys.AddQueue(next, true);
+        //sys.AddQueue(next, true);
     }
 }

@@ -2,12 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-public class DialogEnd : EventBase
+public class DialogEnd : MonoBehaviour
 {
-    [SerializeField]
-    private UnityEvent OnInvoke = null;
-    public override void InvokeEvent()
-    {
-        OnInvoke.Invoke();
-    }
+
 }
