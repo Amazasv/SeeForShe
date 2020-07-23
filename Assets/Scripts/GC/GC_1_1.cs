@@ -24,6 +24,16 @@ public class GC_1_1 : MonoBehaviour
         currentStep = 0;
     }
 
+    private void Update()
+    {
+        UpdateVisuals();
+    }
+    public void UpdateVisuals()
+    {
+        if (currentStep == Info2Spawn.Length && infoManager.transform.childCount == 0)
+            pressAnywhere.ForceTransition();
+    }
+
     public void AddInfo()
     {
         if (currentStep < Info2Spawn.Length)

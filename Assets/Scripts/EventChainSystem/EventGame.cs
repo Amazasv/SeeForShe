@@ -31,12 +31,11 @@ public class EventGame : MonoBehaviour
             lastGame = Instantiate(gamePrefab, gameAnchor);
             lastGame.GetComponent<DotsGC>().OnVictory.AddListener(Complete);
         }
-        
     }
     private void Complete()
     {
         Destroy(textObject);
         Destroy(lastGame);
-        EventChainSystem.Instance.AddQueue(next, true);
+        EventChainSystem.Instance.FireEvent(next, 0.0f);
     }
 }

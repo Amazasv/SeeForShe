@@ -1,70 +1,67 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class LipGameController : MonoBehaviour
 {
     [SerializeField]
-    private Transform undoButton = null;
+    private GameObject undoButton = null;
     [SerializeField]
-    private Transform lips = null;
-    [SerializeField]
-    private int[] order = new int[6];
+    private GameObject[] lips = null;
+
+    public UnityEvent OnVictory;
 
 
-    public List<Transform> indices;
+    private List<GameObject> pickList = new List<GameObject>();
 
-    public void Choose(Transform trans)
+    public void Choose(GameObject t)
     {
-        indices.Add(trans);
-        Text text = trans.GetComponentInChildren<Text>();
-        if (text)
+        pickList.Add(t);
+        t.GetComponentInChildren<CanvasGroup>().alpha = 1;
+        t.GetComponentInChildren<Text>().text = pickList.Count.ToString();
+        t.GetComponent<Button>().interactable = false;
+        undoButton.SetActive(true);
+        undoButton.transform.position = t.transform.position;
+        if (pickList.Count == lips.Length)
         {
-            Color color = text.color;
-            color.a = 1;
-            text.color = color;
-            text.text = indices.Count.ToString();
-        }
-        undoButton.gameObject.SetActive(true);
-        undoButton.position = trans.position;
-        if (indices.Count == lips.childCount) Check();
-    }
-
-    private bool undo()
-    {
-        if (indices.Count > 0)
-        {
-            indices[indices.Count - 1].GetComponent<Button>().interactable = true;
-            Text text = indices[indices.Count - 1].GetComponentInChildren<Text>();
-            if (text)
+            if (Check())
             {
-                Color color = text.color;
-                color.a = 0;
-                text.color = color;
+                undoButton.gameObject.SetActive(false);
+                OnVictory.Invoke();
             }
-            indices.RemoveAt(indices.Count - 1);
-            if (indices.Count > 0) undoButton.position = indices[indices.Count - 1].position;
-            else undoButton.gameObject.SetActive(false);
-            return true;
+            else
+            {
+                while (pickList.Count > 0) Undo();
+            }
         }
-        return false;
     }
 
-    public void UndoButton()
+    public void Undo()
     {
-        undo();
+        if (pickList.Count > 0)
+        {
+            GameObject t = pickList[pickList.Count - 1];
+            t.GetComponent<Button>().interactable = true;
+            t.GetComponentInChildren<CanvasGroup>().alpha = 0;
+            pickList.Remove(t);
+            if (pickList.Count > 0)
+            {
+                undoButton.transform.position = pickList[pickList.Count - 1].transform.position;
+            }
+            else
+            {
+                undoButton.SetActive(false);
+            }
+        }
     }
+
     private bool Check()
     {
-        for (int i = 0; i < indices.Count; i++)
-            if (indices[i].GetSiblingIndex() != order[i])
-            {
-                while (undo()) ;
+        for (int i = 0; i < pickList.Count; i++)
+            if (pickList[i] != lips[i])
                 return false;
-            }
-        undoButton.gameObject.SetActive(false);
-      //  GameManager.Transilate2Level(5);
         return true;
     }
 }

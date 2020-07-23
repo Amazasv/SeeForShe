@@ -5,23 +5,24 @@ using UnityEngine.Playables;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance;
-    //public GameObject EventSystem;
+    [SerializeField]
+    private int startScene = 0;
+
 
     [SerializeField]
-    private int sceneIndex;
+    private LevelBase[] levelBases = null;
 
+    private int sceneIndex;
     private int nextScene;
-    private LevelBase[] levelBases;
 
     private void Awake()
     {
         Instance = this;
-        levelBases = GetComponentsInChildren<LevelBase>(true);
-
     }
-    private void Start()
+
+    private void OnEnable()
     {
-        nextScene = sceneIndex;
+        nextScene = sceneIndex = startScene;
         UpdateScene();
     }
 
@@ -40,6 +41,7 @@ public class LevelManager : MonoBehaviour
     }
     public void StartNextChapter()
     {
+        
         levelBases[sceneIndex].OutTransition();
         levelBases[sceneIndex].outDirector.stopped += delegate { GameManager.Instance.NextChapter(); };
     }

@@ -9,8 +9,8 @@ public class LevelBase : MonoBehaviour
 
     private void Start()
     {
-        inDirector.stopped += OnPlayableStopped;
-        outDirector.stopped += OnPlayableStopped;
+        //inDirector.stopped += OnPlayableStopped;
+        //outDirector.stopped += OnPlayableStopped;
         outDirector.stopped += delegate { LevelManager.Instance.UpdateScene(); };
     }
 
@@ -26,9 +26,9 @@ public class LevelBase : MonoBehaviour
         outDirector.Play();
     }
 
-    private void OnPlayableStopped(PlayableDirector aDirector)
-    {
-      //  if (LevelManager.Instance)
-        //    LevelManager.Instance.EventSystem.SetActive(true);
-    }
+    //private void OnPlayableStopped(PlayableDirector aDirector)
+    //{
+    //  //  if (LevelManager.Instance)
+    //    //    LevelManager.Instance.EventSystem.SetActive(true);
+    //}
 }

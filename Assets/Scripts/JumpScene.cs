@@ -7,14 +7,9 @@ public class JumpScene : MonoBehaviour
     [SerializeField]
     private int m_nextScene = 0;
     [SerializeField]
+    private bool defaultLock = true;
+
     private bool pressLock = true;
-
-    private bool defaultLock;
-
-    private void Awake()
-    {
-        defaultLock = pressLock;
-    }
 
     private void OnEnable()
     {
@@ -37,6 +32,7 @@ public class JumpScene : MonoBehaviour
     public void Unlock()
     {
         if (defaultLock == false) Debug.Log("unneccesary unlock");
+        if (pressLock == false) Debug.Log("repeat unlock");
         pressLock = false;
     }
 }

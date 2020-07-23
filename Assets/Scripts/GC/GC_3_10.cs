@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class GC_3_10 : MonoBehaviour
 {
-    public bool head = false;
-    public bool paints = false;
-    public bool clothes = false;
     [SerializeField]
     private GameObject[] tabs = new GameObject[3];
     [SerializeField]
@@ -47,10 +44,10 @@ public class GC_3_10 : MonoBehaviour
         }
     }
 
-
-
     public void Check()
     {
-
+        for (int i = 0; i < currentSelected.Length; i++)
+            if (currentSelected[i] == -1) return;
+        GetComponent<JumpScene>().ForceTransition();
     }
 }

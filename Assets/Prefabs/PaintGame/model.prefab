@@ -111,8 +111,7 @@ GameObject:
   - component: {fileID: 3067987232302236153}
   - component: {fileID: 5946449609512065990}
   - component: {fileID: 4534920787011000448}
-  - component: {fileID: 2374766962787583499}
-  - component: {fileID: 4418448369821590291}
+  - component: {fileID: 3297945221990120369}
   m_Layer: 5
   m_Name: TouchArea
   m_TagString: Untagged
@@ -162,6 +161,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2374766962787583499
+--- !u!114 &3297945221990120369
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -184,26 +184,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3003890079821426306}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 053ce934962b23c4a9df0ab2b5c89977, type: 3}
+  m_Script: {fileID: 11500000, guid: 639b3b781b8ea98408702847f85df35b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4418448369821590291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3003890079821426306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 14
-    callback:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!1 &5237655388328182929
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,11 +235,13 @@ MonoBehaviour:
   prefab: {fileID: 261100517341971112, guid: 6b8281799a3d3514bacca904f1e369d5, type: 3}
   gridSize: {x: 0.4, y: 0.4}
   spacing: {x: 0.4, y: 0.4}
-  gap: {x: 0, y: 0}
   maxInRow: 3
   startNodePosition: {x: 0, y: 0}
   endNodePosition: {x: 0, y: 0}
   defaultNodePosition: []
+  OnVictory:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!120 &5237655388328182940
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -413,6 +398,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []

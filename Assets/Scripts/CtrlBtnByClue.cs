@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class CtrlBtnByClue : MonoBehaviour
 {
     [SerializeField]
-    private int needClueIndex = 0;
+    private int Index = 0;
 
     private Button btn = null;
     private void Awake()
@@ -17,12 +17,17 @@ public class CtrlBtnByClue : MonoBehaviour
         btn = GetComponent<Button>();
     }
 
-    private void Update()
+    private void OnEnable()
     {
+        GC_5.Instance.OnFlagChange.AddListener(UpdateButton);
         UpdateButton();
     }
     public void UpdateButton()
     {
-        btn.interactable = GC_5.Instance.GetFlag(needClueIndex);
+        btn.interactable = GC_5.Instance.GetFlag(Index);
+    }
+    private void OnDisable()
+    {
+        GC_5.Instance.OnFlagChange.RemoveListener(UpdateButton);
     }
 }

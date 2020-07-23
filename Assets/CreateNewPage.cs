@@ -9,9 +9,6 @@ public class CreateNewPage : MonoBehaviour
 
     public void Create()
     {
-        if(prefab && GC_5.Instance)
-        {
-            GC_5.Instance.CreateNewPage(prefab);
-        }
+        GC_5.Instance.CreateNewPage(prefab);
     }
 }

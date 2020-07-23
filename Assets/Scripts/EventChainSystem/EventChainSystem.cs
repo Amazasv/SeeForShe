@@ -16,21 +16,28 @@ public class EventChainSystem : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            AddQueue(StartEvent, false);
+            AddQueue(StartEvent);
         }
         else Debug.Log("too many EventChainSystem");
-
     }
 
-    public void AddQueue(EventBase dialog, bool immediate = false)
+    public void AddQueue(EventBase target)
     {
-        if (dialog == null)
+        FireEvent(target, defaultGap);
+    }
+
+    public void FireEvent(EventBase target, float delay)
+    {
+        if (target)
+        {
+            StartCoroutine(CreateDialog(target, delay));
+        }
+        else
         {
             Debug.Log("null event");
-            return;
         }
-        StartCoroutine(CreateDialog(dialog, immediate ? 0.0f : defaultGap));
     }
+
 
     IEnumerator CreateDialog(EventBase dialog, float t)
     {

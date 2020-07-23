@@ -84,29 +84,29 @@ public class DotsGC : MonoBehaviour
         else Debug.Log("LineRenderer is missing");
     }
 
-    public void Swipe(TouchArea.DraggedDirection dir)
+    public void Swipe(SwipeArea.DraggedDirection dir)
     {
         switch (dir)
         {
-            case TouchArea.DraggedDirection.Up:
+            case SwipeArea.DraggedDirection.Up:
                 if (currentNode.NodeOnUp != null)
                 {
                     Jump(currentNode.NodeOnUp);
                 }
                 break;
-            case TouchArea.DraggedDirection.Down:
+            case SwipeArea.DraggedDirection.Down:
                 if (currentNode.NodeOnDown != null)
                 {
                     Jump(currentNode.NodeOnDown);
                 }
                 break;
-            case TouchArea.DraggedDirection.Right:
+            case SwipeArea.DraggedDirection.Right:
                 if (currentNode.NodeOnRight != null)
                 {
                     Jump(currentNode.NodeOnRight);
                 }
                 break;
-            case TouchArea.DraggedDirection.Left:
+            case SwipeArea.DraggedDirection.Left:
                 if (currentNode.NodeOnLeft != null)
                 {
                     Jump(currentNode.NodeOnLeft);

@@ -7,6 +7,8 @@ public class GC_5 : MonoBehaviour
 {
     public static GC_5 Instance = null;
     [SerializeField]
+    private int maxTime = 21 * 60 + 30;
+    [SerializeField]
     private bool[] flagList = new bool[20];
     [SerializeField]
     private Transform pageManager = null;
@@ -20,6 +22,11 @@ public class GC_5 : MonoBehaviour
         Instance = this;
     }
 
+    void Update()
+    {
+        CheckTime();
+    }
+
     public void CreateNewPage(GameObject prefab)
     {
         if (Time.time - lastTime > 0.5f)
@@ -29,7 +36,12 @@ public class GC_5 : MonoBehaviour
         }
     }
 
-    public void SetFlag(int index,bool value)
+    private void CheckTime()
+    {
+        if (GameManager.Instance.time >= maxTime) GameManager.Instance.SwitchChapter(5);
+    }
+
+    public void SetFlag(int index, bool value)
     {
         flagList[index] = value;
         OnFlagChange.Invoke();
@@ -39,9 +51,4 @@ public class GC_5 : MonoBehaviour
     {
         return flagList[index];
     }
-
-    //private void OnEnable()
-    //{
-    //    //clueCollected.Initialize();
-    //}
 }
