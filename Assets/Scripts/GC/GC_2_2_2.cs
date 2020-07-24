@@ -60,6 +60,7 @@ public class GC_2_2_2 : MonoBehaviour
 
     private void GameVictory()
     {
+        GameManager.Instance.flag_catch = true;
         SwitchAllAnimation(false);
         if (hint) hint.SetActive(true);
     }

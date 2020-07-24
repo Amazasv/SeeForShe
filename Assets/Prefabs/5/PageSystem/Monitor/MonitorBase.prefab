@@ -249,6 +249,7 @@ GameObject:
   - component: {fileID: 1442427931917449245}
   - component: {fileID: 103264549386939555}
   - component: {fileID: 3628941978102598132}
+  - component: {fileID: 321657110788445267}
   m_Layer: 5
   m_Name: Clue
   m_TagString: Untagged
@@ -327,6 +328,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clueIndex: 0
   sync: 1
+--- !u!225 &321657110788445267
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4230453376607545386}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &4365375310779809667
 GameObject:
   m_ObjectHideFlags: 0
@@ -1060,6 +1073,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8620201631200852533, guid: bbc80e92039e3344cb7aee5a77d51782,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8f7e2dad201e2614cae3fad98a830e87,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbc80e92039e3344cb7aee5a77d51782, type: 3}
 --- !u!224 &1453318606505153090 stripped

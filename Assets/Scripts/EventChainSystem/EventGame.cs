@@ -36,6 +36,7 @@ public class EventGame : MonoBehaviour
     {
         Destroy(textObject);
         Destroy(lastGame);
-        EventChainSystem.Instance.FireEvent(next, 0.0f);
+        GetComponentInParent<EventChainSystem>().FireEvent(next, 0.0f);
+        //EventChainSystem.Instance.FireEvent(next, 0.0f);
     }
 }

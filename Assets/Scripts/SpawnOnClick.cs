@@ -12,7 +12,7 @@ public class SpawnOnClick : MonoBehaviour, IPointerClickHandler
 
     private void Clear()
     {
-        if (lastObject) Destroy(gameObject);
+        if (lastObject) Destroy(lastObject);
     }
 
     public void OnPointerClick(PointerEventData eventData)

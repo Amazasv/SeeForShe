@@ -424,7 +424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 10
-  AddOnEnable: 0
+  AddOnEnable: 1
 --- !u!114 &47812218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1123,6 +1123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb802c22cf0a9584f90aeea2fa6e3758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ChapIndex: -1
   m_nextScene: 6
   defaultLock: 1
 --- !u!114 &173207966
@@ -2763,6 +2764,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultGap: 2
   StartEvent: {fileID: 706866442}
+  PlayOnAwake: 1
 --- !u!1 &517628808
 GameObject:
   m_ObjectHideFlags: 0
@@ -2813,6 +2815,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultGap: 2
   StartEvent: {fileID: 393499432}
+  PlayOnAwake: 1
 --- !u!1 &528288549
 GameObject:
   m_ObjectHideFlags: 0
@@ -3173,7 +3176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23f9b5d6e0a23474a974d2358206dcb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startScene: 2
+  startScene: 0
   levelBases:
   - {fileID: 47812218}
   - {fileID: 1798502605}
@@ -4493,8 +4496,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb802c22cf0a9584f90aeea2fa6e3758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ChapIndex: -1
   m_nextScene: 4
-  defaultLock: 1
+  defaultLock: 0
 --- !u!114 &725837815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4927,6 +4931,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 930
+  flag_catch: 0
+  flag_get_help: 0
 --- !u!4 &778029413
 Transform:
   m_ObjectHideFlags: 0
@@ -5543,7 +5549,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &852919095
 Transform:
   m_ObjectHideFlags: 0
@@ -5574,7 +5580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 10
-  AddOnEnable: 0
+  AddOnEnable: 1
 --- !u!114 &852919097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5587,6 +5593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb802c22cf0a9584f90aeea2fa6e3758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ChapIndex: -1
   m_nextScene: 3
   defaultLock: 1
 --- !u!114 &852919100
@@ -6105,7 +6112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 25
-  AddOnEnable: 0
+  AddOnEnable: 1
 --- !u!114 &907187802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6118,6 +6125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb802c22cf0a9584f90aeea2fa6e3758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ChapIndex: -1
   m_nextScene: 10
   defaultLock: 1
 --- !u!114 &907187803
@@ -6949,6 +6957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb802c22cf0a9584f90aeea2fa6e3758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ChapIndex: -1
   m_nextScene: 9
   defaultLock: 1
 --- !u!114 &1170081636
@@ -7150,6 +7159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb802c22cf0a9584f90aeea2fa6e3758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ChapIndex: -1
   m_nextScene: 8
   defaultLock: 0
 --- !u!114 &1188502539
@@ -7229,6 +7239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultGap: 2
   StartEvent: {fileID: 142032781}
+  PlayOnAwake: 1
 --- !u!1 &1216914743
 GameObject:
   m_ObjectHideFlags: 0
@@ -9559,6 +9570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb802c22cf0a9584f90aeea2fa6e3758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ChapIndex: -1
   m_nextScene: 2
   defaultLock: 0
 --- !u!114 &1798502605
@@ -9819,7 +9831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 10
-  AddOnEnable: 0
+  AddOnEnable: 1
 --- !u!114 &1827621924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9832,6 +9844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb802c22cf0a9584f90aeea2fa6e3758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ChapIndex: -1
   m_nextScene: 4
   defaultLock: 1
 --- !u!114 &1827621925
@@ -9895,7 +9908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 15
-  AddOnEnable: 0
+  AddOnEnable: 1
 --- !u!114 &1848982565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9908,6 +9921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb802c22cf0a9584f90aeea2fa6e3758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ChapIndex: -1
   m_nextScene: 7
   defaultLock: 0
 --- !u!114 &1848982566
@@ -11326,6 +11340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultGap: 2
   StartEvent: {fileID: 1995325156}
+  PlayOnAwake: 1
 --- !u!1 &2121643528
 GameObject:
   m_ObjectHideFlags: 0

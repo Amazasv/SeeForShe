@@ -12,10 +12,9 @@ public class GC_5 : MonoBehaviour
     private bool[] flagList = new bool[20];
     [SerializeField]
     private Transform pageManager = null;
-
     public UnityEvent OnFlagChange;
 
-
+    
     private float lastTime = 0;
     private void Awake()
     {
@@ -38,7 +37,7 @@ public class GC_5 : MonoBehaviour
 
     private void CheckTime()
     {
-        if (GameManager.Instance.time >= maxTime) GameManager.Instance.SwitchChapter(5);
+        if (GameManager.Instance.time >= maxTime) GameManager.Instance.SwitchChapter(6);
     }
 
     public void SetFlag(int index, bool value)

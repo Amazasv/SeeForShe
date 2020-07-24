@@ -7,12 +7,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 171023658398038445, guid: ccdf5b8d1847264489bc2c9a13961400,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: e5e22618380d040448f60107df36712f,
-        type: 3}
     - target: {fileID: 1453318606505153090, guid: ccdf5b8d1847264489bc2c9a13961400,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -151,7 +145,7 @@ PrefabInstance:
     - target: {fileID: 4770710746853854747, guid: ccdf5b8d1847264489bc2c9a13961400,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 219
+      value: 269
       objectReference: {fileID: 0}
     - target: {fileID: 4770710746853854747, guid: ccdf5b8d1847264489bc2c9a13961400,
         type: 3}
@@ -173,6 +167,32 @@ PrefabInstance:
       propertyPath: m_Text
       value: "\u4E8C\u697C\u5229\u767E\u8D85\u5E02\uFF0C\u65BD\u5BB3\u8005\u6D88\u5931\u5728\u4E86\u62D0\u89D2\uFF0C\u524D\u65B9\u662F\u7537\u5395\u3002"
       objectReference: {fileID: 0}
+    - target: {fileID: 5643502660535940210, guid: ccdf5b8d1847264489bc2c9a13961400,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5643502660535940210, guid: ccdf5b8d1847264489bc2c9a13961400,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1516
+      objectReference: {fileID: 0}
+    - target: {fileID: 5643502660535940210, guid: ccdf5b8d1847264489bc2c9a13961400,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5643502660535940210, guid: ccdf5b8d1847264489bc2c9a13961400,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5828804695532475534, guid: ccdf5b8d1847264489bc2c9a13961400,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3150a56d79e6cd24e9f7bb283e17c282,
+        type: 3}
     - target: {fileID: 6023897138822872339, guid: ccdf5b8d1847264489bc2c9a13961400,
         type: 3}
       propertyPath: clueIndex

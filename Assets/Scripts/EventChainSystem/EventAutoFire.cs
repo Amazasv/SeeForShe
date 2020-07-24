@@ -16,6 +16,7 @@ public class EventAutoFire : MonoBehaviour
 
     private void Fire()
     {
-        EventChainSystem.Instance.FireEvent(next,delay);
+        GetComponentInParent<EventChainSystem>().FireEvent(next, delay);
+      //  EventChainSystem.Instance.FireEvent(next, delay);
     }
 }

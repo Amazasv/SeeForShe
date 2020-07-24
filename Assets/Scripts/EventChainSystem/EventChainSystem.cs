@@ -4,21 +4,28 @@ using UnityEngine;
 
 public class EventChainSystem : MonoBehaviour
 {
-    public static EventChainSystem Instance = null;
+   // public static EventChainSystem Instance = null;
 
     [SerializeField]
     private float defaultGap = 2.0f;
     [SerializeField]
     private EventBase StartEvent = null;
+    [SerializeField]
+    private bool PlayOnAwake = true;
 
     private void OnEnable()
     {
-        if (Instance == null)
+       // if (Instance == null)
         {
-            Instance = this;
-            AddQueue(StartEvent);
+           // Instance = this;
+            if (PlayOnAwake) Play();
         }
-        else Debug.Log("too many EventChainSystem");
+    //    else Debug.Log("too many EventChainSystem");
+    }
+
+    public void Play()
+    {
+        AddQueue(StartEvent);
     }
 
     public void AddQueue(EventBase target)
@@ -47,7 +54,7 @@ public class EventChainSystem : MonoBehaviour
 
     private void OnDisable()
     {
-        Instance = null;
+        //Instance = null;
         StopAllCoroutines();
     }
 }

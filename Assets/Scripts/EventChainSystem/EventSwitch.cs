@@ -7,10 +7,6 @@ using System;
 [RequireComponent(typeof(EventBase))]
 public class EventSwitch : MonoBehaviour
 {
-
-    //[SerializeField]
-    //private bool hasLifeSpan = false;
-
     [Serializable]
     public class Branch
     {
@@ -22,34 +18,42 @@ public class EventSwitch : MonoBehaviour
     [SerializeField]
     private GameObject btnPrefab = null;
     [SerializeField]
-    private Transform btnCanvas = null;
+    private Canvas btnCanvas = null;
+
+    private HorizontalOrVerticalLayoutGroup layout = null;
     private List<GameObject> optionList = new List<GameObject>();
 
     private void Awake()
     {
         GetComponent<EventBase>().OnInvoke.AddListener(Fire);
+        layout = btnCanvas.GetComponentInChildren<HorizontalOrVerticalLayoutGroup>();
+        btnCanvas.gameObject.SetActive(false);
     }
 
     public void Fire()
-    {
+    { 
         ShowOptions();
     }
 
     private void ShowOptions()
     {
+        btnCanvas.gameObject.SetActive(true);
         foreach (Branch branch in branches)
         {
-            GameObject t = Instantiate(btnPrefab, btnCanvas);
+            GameObject t = Instantiate(btnPrefab, layout.transform);
             t.GetComponentInChildren<Text>().text = branch.desc;
             t.GetComponentInChildren<Button>().onClick.AddListener(delegate { Choose(branch.next); });
             optionList.Add(t);
         }
+        LayoutRebuilder.ForceRebuildLayoutImmediate(layout.GetComponent<RectTransform>());
     }
 
     private void Choose(EventBase target)
     {
+        btnCanvas.gameObject.SetActive(false);
         foreach (GameObject tmp in optionList) Destroy(tmp);
         optionList.Clear();
-        EventChainSystem.Instance.FireEvent(target, 0.0f);
+        GetComponentInParent<EventChainSystem>().FireEvent(target, 0.0f);
+        //EventChainSystem.Instance.FireEvent(target, 0.0f);
     }
 }

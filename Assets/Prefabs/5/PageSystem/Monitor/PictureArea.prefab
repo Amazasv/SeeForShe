@@ -330,6 +330,7 @@ GameObject:
   - component: {fileID: 3825743962061776638}
   - component: {fileID: 5425175078855176160}
   - component: {fileID: 4672154428726478020}
+  - component: {fileID: 8557456301580446573}
   m_Layer: 5
   m_Name: BingoArea
   m_TagString: Untagged
@@ -406,7 +407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 4393947298177608488, guid: f4903b62c56358548af87925cb1f67cd, type: 3}
-  parent: {fileID: 2945165667054759839}
+  parent: {fileID: 2646449106667574774}
 --- !u!114 &3825743962061776638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -448,6 +449,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 10
   AddOnEnable: 0
+--- !u!225 &8557456301580446573
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6257069713765156147}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &9050067233480131455
 GameObject:
   m_ObjectHideFlags: 0

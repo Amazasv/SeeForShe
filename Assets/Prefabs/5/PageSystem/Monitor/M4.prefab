@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &6460579212169645208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5877772286360958357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AspectMode: 2
+  m_AspectRatio: 1.5200803
 --- !u!1001 &5369607587373034759
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7,12 +21,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 171023658398038445, guid: ccdf5b8d1847264489bc2c9a13961400,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 25c3f406dacae8b4eb833367a4f71c15,
-        type: 3}
     - target: {fileID: 1453318606505153090, guid: ccdf5b8d1847264489bc2c9a13961400,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -151,28 +159,54 @@ PrefabInstance:
     - target: {fileID: 4770710746853854747, guid: ccdf5b8d1847264489bc2c9a13961400,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -15.9
+      value: 215.7
       objectReference: {fileID: 0}
     - target: {fileID: 4770710746853854747, guid: ccdf5b8d1847264489bc2c9a13961400,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 76.86
+      value: 163.2714
       objectReference: {fileID: 0}
     - target: {fileID: 4770710746853854747, guid: ccdf5b8d1847264489bc2c9a13961400,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 132.50993
+      value: 293.6
       objectReference: {fileID: 0}
     - target: {fileID: 4770710746853854747, guid: ccdf5b8d1847264489bc2c9a13961400,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 168.05
+      value: 289.76117
       objectReference: {fileID: 0}
     - target: {fileID: 5250248258969343827, guid: ccdf5b8d1847264489bc2c9a13961400,
         type: 3}
       propertyPath: m_Text
       value: "\u4E00\u697C\u670D\u88C5\u5E97\uFF0C\u6709\u4E00\u4EBA\u548C\u670B\u53CB\u5728\u9A9A\u6270\u5973\u6536\u94F6\u5458\uFF0C\u6837\u8C8C\u5F62\u4F3C\u65BD\u5BB3\u8005\uFF0C\u4F46\u662F\u8863\u7740\u6709\u522B\uFF0C\u7A7F\u7740\u6A59\u8272\u5916\u8863\u3002"
       objectReference: {fileID: 0}
+    - target: {fileID: 5643502660535940210, guid: ccdf5b8d1847264489bc2c9a13961400,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5643502660535940210, guid: ccdf5b8d1847264489bc2c9a13961400,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5643502660535940210, guid: ccdf5b8d1847264489bc2c9a13961400,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5643502660535940210, guid: ccdf5b8d1847264489bc2c9a13961400,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5828804695532475534, guid: ccdf5b8d1847264489bc2c9a13961400,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 46e1130e67f8675478eac2184d8fda07,
+        type: 3}
     - target: {fileID: 6023897138822872339, guid: ccdf5b8d1847264489bc2c9a13961400,
         type: 3}
       propertyPath: clueIndex
@@ -191,3 +225,9 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccdf5b8d1847264489bc2c9a13961400, type: 3}
+--- !u!1 &5877772286360958357 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1951931545370663058, guid: ccdf5b8d1847264489bc2c9a13961400,
+    type: 3}
+  m_PrefabInstance: {fileID: 5369607587373034759}
+  m_PrefabAsset: {fileID: 0}

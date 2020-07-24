@@ -5,22 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
+    public static GameManager Instance = null;
     public int time = 15 * 60 + 30;
-
+    public bool flag_catch = false;
+    public bool flag_get_help = false;
     private void Awake()
     {
         if (Instance) Destroy(gameObject);
         else
         {
             Instance = this;
+            Init();
             DontDestroyOnLoad(gameObject);
         }
     }
 
     public void SwitchChapter(int index)
     {
+        if (index == 0) Init();
         SceneManager.LoadScene(index);
+        
     }
 
     public void NextChapter()
@@ -30,5 +34,12 @@ public class GameManager : MonoBehaviour
         {
             SwitchChapter(index + 1);
         }
+    }
+
+    private void Init()
+    {
+        time = 15 * 60 + 30;
+        flag_catch = false;
+        flag_get_help = false;
     }
 }
