@@ -10,7 +10,10 @@ public class AddTimeScript : MonoBehaviour
     private bool AddOnEnable = false;
     private void OnEnable()
     {
-        if (AddOnEnable) AddTime();
+        if (AddOnEnable)
+        {
+            AddTime();
+        }
     }
 
     public void AddTime()

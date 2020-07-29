@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public int time = 15 * 60 + 30;
     public bool flag_catch = false;
     public bool flag_get_help = false;
+    public bool flag_gentle_speaking = false;
     private void Awake()
     {
         if (Instance) Destroy(gameObject);
@@ -24,7 +25,6 @@ public class GameManager : MonoBehaviour
     {
         if (index == 0) Init();
         SceneManager.LoadScene(index);
-        
     }
 
     public void NextChapter()
@@ -41,5 +41,6 @@ public class GameManager : MonoBehaviour
         time = 15 * 60 + 30;
         flag_catch = false;
         flag_get_help = false;
+        flag_gentle_speaking = false;
     }
 }

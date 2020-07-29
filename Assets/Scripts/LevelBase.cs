@@ -7,11 +7,12 @@ public class LevelBase : MonoBehaviour
     public PlayableDirector inDirector;
     public PlayableDirector outDirector;
 
-    private void Start()
+    private void OnEnable()
     {
         //inDirector.stopped += OnPlayableStopped;
         //outDirector.stopped += OnPlayableStopped;
-        outDirector.stopped += delegate { LevelManager.Instance.UpdateScene(); };
+       
+        outDirector.stopped += UpdateScene;
     }
 
     public void InTransition()
@@ -24,6 +25,16 @@ public class LevelBase : MonoBehaviour
     {
        // LevelManager.Instance.EventSystem.SetActive(false);
         outDirector.Play();
+    }
+
+    private void UpdateScene(PlayableDirector a)
+    {
+        LevelManager.Instance.UpdateScene();
+    }
+
+    private void OnDisable()
+    {
+        outDirector.stopped -= UpdateScene;
     }
 
     //private void OnPlayableStopped(PlayableDirector aDirector)

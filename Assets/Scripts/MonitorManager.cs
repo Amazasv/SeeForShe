@@ -18,5 +18,7 @@ public class MonitorManager : MonoBehaviour
         {
             btns[i].SetActive(GameManager.Instance.time >= timeLimit[i]);
         }
+        btns[1].SetActive(GameManager.Instance.flag_catch || GameManager.Instance.flag_get_help);
+        btns[2].SetActive(GameManager.Instance.flag_gentle_speaking);
     }
 }
