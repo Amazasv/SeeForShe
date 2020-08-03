@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Schema;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 using UnityEngine.Playables;
 public class LevelManager : MonoBehaviour
 {
@@ -10,6 +12,7 @@ public class LevelManager : MonoBehaviour
     private int startScene = 0;
     [SerializeField]
     private List<LevelBase> levelBases = new List<LevelBase>();
+
 
     public int sceneIndex;
     private int nextScene;
@@ -40,17 +43,26 @@ public class LevelManager : MonoBehaviour
         }
 
     }
-    public void StartNextChapter()
+    private void StartNextChapter()
     {
-        levelBases[sceneIndex].OutTransition();
-        levelBases[sceneIndex].outDirector.stopped += delegate { GameManager.Instance.NextChapter(); };
+        Debug.LogError("No Next");
+        //StartCoroutine(SwitchChapter((float)levelBases[sceneIndex].outDirector.duration, 1));
+        //levelBases[sceneIndex].OutTransition();
+        //levelBases[sceneIndex].outDirector.stopped += delegate { GameManager.Instance.NextChapter(); };
     }
 
 
     public void StartSwitchChapter(int next)
     {
         levelBases[sceneIndex].OutTransition();
-        levelBases[sceneIndex].outDirector.stopped += delegate { GameManager.Instance.SwitchChapter(next); };
+        StartCoroutine(SwitchChapter((float)levelBases[sceneIndex].outDirector.duration, next));
+    }
+
+    private IEnumerator SwitchChapter(float t, int next)
+    {
+        yield return new WaitForSeconds(t);
+        GameManager.Instance.SwitchChapter(next);
+        yield return null;
     }
 
     public void UpdateScene()

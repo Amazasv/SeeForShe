@@ -12,6 +12,6 @@ public class EventSetFlag : MonoBehaviour
 
     private void Fire()
     {
-        GameManager.Instance.flag_get_help = true;
+        GameManager.Instance.flag_gentle_speaking = true;
     }
 }

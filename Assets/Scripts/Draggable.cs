@@ -6,8 +6,10 @@ public class Draggable : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDra
     private Vector2 origin;
     private RectTransform rect;
     private CanvasGroup canvasGroup;
+    private Canvas canvas;
     private void Awake()
     {
+        canvas = GetComponentInParent<Canvas>();
         rect = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
     }
@@ -17,7 +19,7 @@ public class Draggable : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDra
     }
     public void OnDrag(PointerEventData eventData)
     {
-        rect.anchoredPosition += eventData.delta;
+        rect.anchoredPosition += eventData.delta/canvas.scaleFactor;
     }
 
     public void OnEndDrag(PointerEventData eventData)
