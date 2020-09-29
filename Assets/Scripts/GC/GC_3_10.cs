@@ -48,6 +48,6 @@ public class GC_3_10 : MonoBehaviour
     {
         for (int i = 0; i < currentSelected.Length; i++)
             if (currentSelected[i] == -1) return;
-        GetComponent<JumpScene>().ForceTransition();
+        GetComponent<JumpChapter>().ForceTransition();
     }
 }

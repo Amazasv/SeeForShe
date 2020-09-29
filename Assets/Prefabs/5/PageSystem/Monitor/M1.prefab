@@ -151,6 +151,11 @@ PrefabInstance:
       propertyPath: clueIndex
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4365375310779809667, guid: ccdf5b8d1847264489bc2c9a13961400,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4770710746853854747, guid: ccdf5b8d1847264489bc2c9a13961400,
         type: 3}
       propertyPath: m_AnchoredPosition.x

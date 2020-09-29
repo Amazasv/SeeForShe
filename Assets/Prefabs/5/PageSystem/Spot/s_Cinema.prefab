@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 1342238742660089750}
   - component: {fileID: 5063899087936920814}
   - component: {fileID: 8259192480541278350}
-  - component: {fileID: 7383754349704635935}
+  - component: {fileID: 1151669906727840708}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7383754349704635935}
+      - m_Target: {fileID: 1151669906727840708}
         m_MethodName: ForceTransition
         m_Mode: 1
         m_Arguments:
@@ -263,7 +263,7 @@ MonoBehaviour:
   ctrlAlpha: 0
   ctrlInteractable: 1
   ctrlRaycast: 0
---- !u!114 &7383754349704635935
+--- !u!114 &1151669906727840708
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -272,12 +272,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1383643433059435514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb802c22cf0a9584f90aeea2fa6e3758, type: 3}
+  m_Script: {fileID: 11500000, guid: 656886166dc7954479de260d81295fbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ChapIndex: 8
-  m_nextScene: 0
-  pressLock: 1
+  index: 8
 --- !u!1 &2019232899311989417
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,11 +7,15 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance = null;
     public int time = 15 * 60 + 30;
-    public bool flag_catch = false;
-    public bool flag_get_help = false;
-    public bool flag_gentle_speaking = false;
+    public Dictionary<string, bool> globalFlags = new Dictionary<string, bool>()
+    {
+        {"catch",false },
+        {"get_help",false },
+        {"gentle_speaking",false }
+    };
     private void Awake()
     {
+
         if (Instance) Destroy(gameObject);
         else
         {
@@ -39,8 +43,8 @@ public class GameManager : MonoBehaviour
     private void Init()
     {
         time = 15 * 60 + 30;
-        flag_catch = false;
-        flag_get_help = false;
-        flag_gentle_speaking = false;
+        globalFlags["catch"] = false;
+        globalFlags["get_help"] = false;
+        globalFlags["gentle_speaking"] = false;
     }
 }

@@ -811,6 +811,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: MonitorRoom
       objectReference: {fileID: 0}
+    - target: {fileID: 6895691397661877712, guid: bbc80e92039e3344cb7aee5a77d51782,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bf78fa664fb02384db8a0b9490ed90e2,
+        type: 3}
     - target: {fileID: 7049746644514640346, guid: bbc80e92039e3344cb7aee5a77d51782,
         type: 3}
       propertyPath: m_LocalPosition.x

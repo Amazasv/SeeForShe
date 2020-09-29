@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using CustomEvent;
 public class GC_1_6 : MonoBehaviour
 {
     [SerializeField]
@@ -10,8 +10,10 @@ public class GC_1_6 : MonoBehaviour
     private GameObject appScreen = null;
     [SerializeField]
     private EventBase wrongEvent = null;
+    [SerializeField]
+    private float cd = 1.0f;
 
-    private bool cd = false;
+    private float lastSpawn = 0.0f;
     private void OnEnable()
     {
         mainScreen.SetActive(true);
@@ -20,23 +22,15 @@ public class GC_1_6 : MonoBehaviour
 
     public void PressWrong()
     {
-        if (!cd)
+        if (Time.time - lastSpawn >= cd)
         {
             wrongEvent.InvokeEvent();
-            cd = true;
+            lastSpawn = Time.time;
         }
-    }
-
-    public void ResetCD()
-    {
-        cd = false;
     }
 
     public void PressRight()
     {
-        if (!cd)
-        {
-            appScreen.SetActive(true);
-        }
+        appScreen.SetActive(true);
     }
 }

@@ -151,9 +151,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 930
-  flag_catch: 0
-  flag_get_help: 0
-  flag_gentle_speaking: 0
 --- !u!4 &39355426
 Transform:
   m_ObjectHideFlags: 0
@@ -166,7 +163,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &41194549
 PrefabInstance:
@@ -582,7 +579,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &136035020
 PrefabInstance:
@@ -719,7 +716,7 @@ PrefabInstance:
     - target: {fileID: 7258682034122318786, guid: 766e7aaa35929494d9b73ccaa3c24161,
         type: 3}
       propertyPath: m_Name
-      value: Canvas (1)
+      value: Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 7258682034122318787, guid: 766e7aaa35929494d9b73ccaa3c24161,
         type: 3}
@@ -759,7 +756,7 @@ PrefabInstance:
     - target: {fileID: 7258682034122318787, guid: 766e7aaa35929494d9b73ccaa3c24161,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7258682034122318787, guid: 766e7aaa35929494d9b73ccaa3c24161,
         type: 3}
@@ -1255,7 +1252,7 @@ PrefabInstance:
     - target: {fileID: 7137037881163181933, guid: 5b6ffc077810eac4484c89f7b85c8311,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7137037881163181933, guid: 5b6ffc077810eac4484c89f7b85c8311,
         type: 3}
@@ -1330,7 +1327,7 @@ PrefabInstance:
     - target: {fileID: 5705563430170011084, guid: 8ce0927ef16ce9847ae05a91c55ea65d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5705563430170011084, guid: 8ce0927ef16ce9847ae05a91c55ea65d,
         type: 3}
@@ -1466,6 +1463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1407db54bf1419647a33ca69a51b5764, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_FlagName: gentle_speaking
 --- !u!1 &426893957
 GameObject:
   m_ObjectHideFlags: 0
@@ -1475,9 +1473,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 426893958}
-  - component: {fileID: 426893960}
   - component: {fileID: 426893963}
   - component: {fileID: 426893962}
+  - component: {fileID: 426893960}
   m_Layer: 0
   m_Name: Scene (1)
   m_TagString: Untagged
@@ -1500,8 +1498,8 @@ Transform:
   - {fileID: 1217635113}
   - {fileID: 1587500112}
   - {fileID: 752071820}
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 605338325}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &426893960
 MonoBehaviour:
@@ -1529,9 +1527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb802c22cf0a9584f90aeea2fa6e3758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ChapIndex: -1
-  m_nextScene: 2
-  pressLock: 1
+  m_nextScene: {fileID: 633096677}
 --- !u!114 &426893963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1544,8 +1540,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78a8053e78a560a438ed8f2cf7c7cce5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BGM: {fileID: 1694583892}
   inDirector: {fileID: 325750492}
   outDirector: {fileID: 370994134}
+  m_LevelManager: {fileID: 605338324}
 --- !u!1 &605338323
 GameObject:
   m_ObjectHideFlags: 0
@@ -1556,7 +1554,6 @@ GameObject:
   m_Component:
   - component: {fileID: 605338325}
   - component: {fileID: 605338324}
-  - component: {fileID: 605338326}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -1576,17 +1573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23f9b5d6e0a23474a974d2358206dcb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startScene: 0
-  levelBases:
-  - {fileID: 1411278094}
-  - {fileID: 426893963}
-  - {fileID: 633096677}
-  - {fileID: 1205551466}
-  - {fileID: 1168608719}
-  sceneIndex: 0
-  OnSceneChange:
-    m_PersistentCalls:
-      m_Calls: []
+  startScene: {fileID: 1411278094}
 --- !u!4 &605338325
 Transform:
   m_ObjectHideFlags: 0
@@ -1594,29 +1581,18 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 605338323}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1411278090}
+  - {fileID: 426893958}
+  - {fileID: 633096671}
+  - {fileID: 1205551462}
+  - {fileID: 1168608717}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &605338326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 605338323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 678d2e509a9a7b34aa6d110cd8e576f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BGMList:
-  - src: {fileID: 1694583892}
-    startIndex: 0
-    endIndex: 4
 --- !u!1 &633096670
 GameObject:
   m_ObjectHideFlags: 0
@@ -1626,12 +1602,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 633096671}
-  - component: {fileID: 633096675}
   - component: {fileID: 633096677}
   - component: {fileID: 633096676}
+  - component: {fileID: 633096675}
   - component: {fileID: 633096674}
   - component: {fileID: 633096673}
   - component: {fileID: 633096672}
+  - component: {fileID: 633096678}
   m_Layer: 0
   m_Name: Scene (2)
   m_TagString: Untagged
@@ -1651,8 +1628,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1781601901}
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 605338325}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &633096672
 MonoBehaviour:
@@ -1672,7 +1649,7 @@ MonoBehaviour:
     m_Events:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 633096676}
+        - m_Target: {fileID: 633096678}
           m_MethodName: Unlock
           m_Mode: 1
           m_Arguments:
@@ -1751,9 +1728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb802c22cf0a9584f90aeea2fa6e3758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ChapIndex: -1
-  m_nextScene: 3
-  pressLock: 1
+  m_nextScene: {fileID: 1205551466}
 --- !u!114 &633096677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1766,8 +1741,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78a8053e78a560a438ed8f2cf7c7cce5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BGM: {fileID: 1694583892}
   inDirector: {fileID: 325750492}
   outDirector: {fileID: 370994134}
+  m_LevelManager: {fileID: 605338324}
+--- !u!114 &633096678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633096670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aa23a6dbc3eb474cbfc869ea1701e15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Lock: 1
+  OnPress:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 633096676}
+        m_MethodName: ForceTransition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &680675490
 GameObject:
   m_ObjectHideFlags: 0
@@ -2280,7 +2284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1029452145}
-  sprite: {fileID: 21300000, guid: 1f870f793e0632b41a05326e47c89ee4, type: 3}
+  sprite: {fileID: 21300000, guid: b382e12b68f75e1428f364915931d79b, type: 3}
 --- !u!1 &1001306511
 GameObject:
   m_ObjectHideFlags: 0
@@ -2487,6 +2491,7 @@ GameObject:
   - component: {fileID: 1168608719}
   - component: {fileID: 1168608718}
   - component: {fileID: 1168608720}
+  - component: {fileID: 1168608721}
   m_Layer: 0
   m_Name: Scene (4)
   m_TagString: Untagged
@@ -2506,8 +2511,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 44719348}
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 605338325}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1168608718
 MonoBehaviour:
@@ -2518,12 +2523,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1168608716}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb802c22cf0a9584f90aeea2fa6e3758, type: 3}
+  m_Script: {fileID: 11500000, guid: 656886166dc7954479de260d81295fbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ChapIndex: 5
-  m_nextScene: -1
-  pressLock: 1
+  index: 5
 --- !u!114 &1168608719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2536,8 +2539,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78a8053e78a560a438ed8f2cf7c7cce5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BGM: {fileID: 1694583892}
   inDirector: {fileID: 325750492}
   outDirector: {fileID: 370994134}
+  m_LevelManager: {fileID: 605338324}
 --- !u!114 &1168608720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2551,6 +2556,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 1.5
+--- !u!114 &1168608721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168608716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aa23a6dbc3eb474cbfc869ea1701e15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Lock: 1
+  OnPress:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1168608718}
+        m_MethodName: ForceTransition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1205551461
 GameObject:
   m_ObjectHideFlags: 0
@@ -2560,9 +2592,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1205551462}
+  - component: {fileID: 1205551466}
   - component: {fileID: 1205551463}
   - component: {fileID: 1205551464}
-  - component: {fileID: 1205551466}
   - component: {fileID: 1205551465}
   - component: {fileID: 1205551468}
   - component: {fileID: 1205551467}
@@ -2585,8 +2617,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1542330568}
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 605338325}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1205551463
 MonoBehaviour:
@@ -2600,9 +2632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb802c22cf0a9584f90aeea2fa6e3758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ChapIndex: -1
-  m_nextScene: 4
-  pressLock: 1
+  m_nextScene: {fileID: 1168608719}
 --- !u!114 &1205551464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2629,9 +2659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb802c22cf0a9584f90aeea2fa6e3758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ChapIndex: -1
-  m_nextScene: 0
-  pressLock: 1
+  m_nextScene: {fileID: 1168608719}
 --- !u!114 &1205551466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2644,8 +2672,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78a8053e78a560a438ed8f2cf7c7cce5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BGM: {fileID: 1694583892}
   inDirector: {fileID: 325750492}
   outDirector: {fileID: 370994134}
+  m_LevelManager: {fileID: 605338324}
 --- !u!114 &1205551467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2851,11 +2881,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1411278090}
-  - component: {fileID: 1411278091}
   - component: {fileID: 1411278094}
   - component: {fileID: 1411278093}
+  - component: {fileID: 1411278091}
   - component: {fileID: 1411278092}
   - component: {fileID: 1411278095}
+  - component: {fileID: 1411278096}
   m_Layer: 0
   m_Name: Scene (0)
   m_TagString: Untagged
@@ -2875,8 +2906,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1649113522}
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 605338325}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1411278091
 MonoBehaviour:
@@ -2925,9 +2956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb802c22cf0a9584f90aeea2fa6e3758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ChapIndex: -1
-  m_nextScene: 1
-  pressLock: 1
+  m_nextScene: {fileID: 426893963}
 --- !u!114 &1411278094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2940,8 +2969,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78a8053e78a560a438ed8f2cf7c7cce5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BGM: {fileID: 1694583892}
   inDirector: {fileID: 325750492}
   outDirector: {fileID: 370994134}
+  m_LevelManager: {fileID: 605338324}
 --- !u!114 &1411278095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2960,7 +2991,7 @@ MonoBehaviour:
     m_Events:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1411278093}
+        - m_Target: {fileID: 1411278096}
           m_MethodName: Unlock
           m_Mode: 1
           m_Arguments:
@@ -2971,6 +3002,33 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1411278096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411278089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aa23a6dbc3eb474cbfc869ea1701e15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Lock: 1
+  OnPress:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1411278093}
+        m_MethodName: ForceTransition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1416867277
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,12 +11,12 @@ public class GC_1_1 : MonoBehaviour
 
     private int currentStep = 0;
     private InfoManager infoManager = null;
-    private JumpScene pressAnywhere = null;
+    private JumpScene jump = null;
 
     private void Awake()
     {
         infoManager = GetComponentInChildren<InfoManager>();
-        pressAnywhere = GetComponent<JumpScene>();
+        jump = GetComponent<JumpScene>();
     }
 
     private void OnEnable()
@@ -31,7 +31,7 @@ public class GC_1_1 : MonoBehaviour
     public void UpdateVisuals()
     {
         if (currentStep == Info2Spawn.Length && infoManager.transform.childCount == 0)
-            pressAnywhere.ForceTransition();
+            jump.ForceTransition();
     }
 
     public void AddInfo()
