@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 2733863936342140128}
   - component: {fileID: 1911949836223252555}
   - component: {fileID: 6976368053565431566}
+  - component: {fileID: 7029506935611240171}
   m_Layer: 5
   m_Name: Info
   m_TagString: Untagged
@@ -317,6 +318,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7029506935611240171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3208554877434885492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0a726ea2a0d8a84f8a4d970e3f367e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3208554877476705241
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,26 +448,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2733863936342140128}
-        m_MethodName: SetTrigger
-        m_Mode: 5
+      - m_Target: {fileID: 7029506935611240171}
+        m_MethodName: Clear
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: destroy
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3208554877476705241}
-        m_MethodName: SendMessageUpwards
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: UpdateVisuals
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &3208554877622010536

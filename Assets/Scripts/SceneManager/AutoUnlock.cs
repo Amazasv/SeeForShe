@@ -17,7 +17,7 @@ public class AutoUnlock : MonoBehaviour
         Invoke(nameof(Unlock), delay);
     }
 
-    public void Unlock()
+    private void Unlock()
     {
         detector.Unlock();
     }
