@@ -1,49 +1,53 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Playables;
-public class PhotoGameController : MonoBehaviour
+using UnityEngine.UI;
+public class PhotoGameController : GCSequence
 {
     [SerializeField]
-    private int currentStep = 0;
+    private Animation lipTransition = null;
     [SerializeField]
-    private int timelineStep = 0;
-    private PlayableDirector playableDirector;
-    [SerializeField]
-    private List<Button> buttons=new List<Button>();
+    private Sprite[] photos = null;
+
+    private CameraManager cameraManager = null;
+    private MyCamera myCamera = null;
     private void Awake()
     {
-        playableDirector = GetComponent<PlayableDirector>();
+        myCamera = GetComponentInChildren<MyCamera>();
+        cameraManager = GetComponentInChildren<CameraManager>(true);
+
     }
 
-    private void OnEnable()
+    private void Start()
     {
-        playableDirector.Play();
-        currentStep = 0;
-        timelineStep = 0;
-        UpdateVisuals();
+        CurrentStep = 0;
+        lipTransition.gameObject.SetActive(false);
     }
 
-    public void CheckPause()
+    public void Cheese()
     {
-        if (timelineStep >= currentStep) playableDirector.Pause();
-        timelineStep++;
-    }
-
-    public void Choose(int index)
-    {
-        if (index == currentStep)
+        GameObject newPhoto = myCamera.Print();
+        cameraManager.gameObject.SetActive(true);
+        cameraManager.Print(newPhoto);
+        CurrentStep++;
+        if (CurrentStep < 3)
         {
-            playableDirector.Resume();
-            currentStep++;
-            UpdateVisuals();
+            myCamera.SetImage(photos[CurrentStep]);
         }
+        else if (CurrentStep == 3)
+        {
+            myCamera.gameObject.SetActive(false);
+            
+            lipTransition.gameObject.SetActive(true);
+            cameraManager.director.stopped += Director_stopped;
+        }
+        
     }
 
-    private void UpdateVisuals()
+    private void Director_stopped(PlayableDirector obj)
     {
-        for (int i = 0; i < buttons.Count; i++) buttons[i].interactable = (i >= currentStep);
+        lipTransition.Play();
+        myCamera.transform.parent.gameObject.SetActive(false);
     }
-
 }

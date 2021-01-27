@@ -9,6 +9,8 @@ public class GC_1_3 : MonoBehaviour
     private List<GameObject> portraits=new List<GameObject>();
     [SerializeField]
     private List<Draggable> items=new List<Draggable>();
+    [SerializeField]
+    private List<GameObject> emptyHanger = new List<GameObject>();
 
     private int currentStep = 0;
     private JumpScene press = null;
@@ -44,6 +46,7 @@ public class GC_1_3 : MonoBehaviour
     private void UpdateVisual()
     {
         for (int i = 0; i < items.Count; i++) items[i].gameObject.SetActive(i >= currentStep);
+        for (int i = 0; i < emptyHanger.Count; i++) emptyHanger[i].SetActive(i < currentStep);
         foreach (GameObject tmp in portraits) tmp.SetActive(false);
         if (currentStep < portraits.Count)
             portraits[currentStep].SetActive(true);

@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
-
 public class Draggable : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler
 {
     private Vector2 origin;

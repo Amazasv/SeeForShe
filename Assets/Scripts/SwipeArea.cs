@@ -8,17 +8,17 @@ public class SwipeArea : MonoBehaviour, IDragHandler,IEndDragHandler
 {
     public enum DraggedDirection
     {
-        Up,
-        Down,
-        Right,
-        Left
+        Up=0,
+        Down=1,
+        Right=2,
+        Left=3
     }
     public void OnEndDrag(PointerEventData eventData)
     {
         Vector3 dragVectorDirection = (eventData.position - eventData.pressPosition).normalized;
         SendMessageUpwards("Swipe", GetDragDirection(dragVectorDirection));
     }
-    private DraggedDirection GetDragDirection(Vector3 dragVector)
+    public static DraggedDirection GetDragDirection(Vector3 dragVector)
     {
         float positiveX = Mathf.Abs(dragVector.x);
         float positiveY = Mathf.Abs(dragVector.y);

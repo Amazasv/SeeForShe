@@ -23,15 +23,17 @@ public class UIByClue : MonoBehaviour
     private void OnEnable()
     {
         UpdateVisuals();
-        GC_5.Instance.OnFlagChange.AddListener(UpdateVisuals);
+        if (GC_5.Instance != null) GC_5.Instance.OnFlagChange.AddListener(UpdateVisuals);
     }
 
     public void UpdateVisuals()
     {
-        bool flag = !(sync ^ GC_5.Instance.GetFlag(clueIndex));
-        if(ctrlAlpha) canvasGroup.alpha = flag ? 1.0f : 0.0f;
-        if(ctrlRaycast)canvasGroup.blocksRaycasts = flag;
-        if(ctrlInteractable) canvasGroup.interactable = flag;
+        bool flag;
+        if (GC_5.Instance == null) flag = true;
+        else flag = !(sync ^ GC_5.Instance.GetFlag(clueIndex));
+        if (ctrlAlpha) canvasGroup.alpha = flag ? 1.0f : 0.0f;
+        if (ctrlRaycast) canvasGroup.blocksRaycasts = flag;
+        if (ctrlInteractable) canvasGroup.interactable = flag;
     }
     private void OnDisable()
     {

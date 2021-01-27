@@ -33,6 +33,7 @@ public class LevelBase : MonoBehaviour
     public void OutTransition()
     {
         //EventSystem.current.enabled = false;
+        if(outDirector)
         outDirector.Play();
     }
 

@@ -64,11 +64,13 @@ public class InfoGroup : MonoBehaviour
     public void AddInfo(GameObject prefab)
     {
         GameObject tmp = Instantiate(prefab, transform);
+        tmp.transform.position = new Vector2(-10000.0f, -10000.0f);
         tmp.transform.SetAsFirstSibling();
         RectTransform rect = tmp.GetComponent<RectTransform>();
         rect.anchorMin = startAnchorMin;
         rect.anchorMax = startAnchorMax;
         rect.anchoredPosition = Vector2.zero;
+        tmp.GetComponent<CanvasGroup>().alpha = 0;
     }
 
     public void RegisterInfo(PhoneInfo info)

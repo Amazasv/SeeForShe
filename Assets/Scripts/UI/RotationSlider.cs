@@ -1,66 +1,85 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class RotationSlider : MonoBehaviour
 {
+    public RectTransform[] items = null;
     [SerializeField]
-    private RectTransform[] items = null;
-    [Range(0.0f, 0.05f)]
+    private AnimationCurve m_InCurve = new AnimationCurve();
     [SerializeField]
-    private float moveSpeed = 0.05f;
+    private AnimationCurve m_OutCurve = new AnimationCurve();
+    [SerializeField]
+    private float m_InDuration = 1.0f;
+    [SerializeField]
+    private float m_OutDuration = 1.0f;
     [SerializeField]
     private Vector2 sliderDir = Vector2.right;
     [SerializeField]
     private bool loop = true;
 
-    private int currentItem = 0;
-    private void ForceUpdateItem()
-    {
-        StopAllCoroutines();
-        foreach (RectTransform i in items) i.gameObject.SetActive(false);
-        items[currentItem].gameObject.SetActive(true);
-        items[currentItem].anchorMin = items[currentItem].anchorMax = new Vector2(0.5f, 0.5f);
-    }
+    private int m_Current = 0;
+
+    public bool f=false;
 
     private void OnEnable()
     {
-        ForceUpdateItem();
+        FinishAnim();
     }
 
     private void SwitchItem(int next, Vector2 dir)
     {
         dir.Normalize();
-        ForceUpdateItem();
+        FinishAnim();
         items[next].gameObject.SetActive(true);
         items[next].anchorMin = items[next].anchorMax = new Vector2(0.5f, 0.5f) + dir;
-        StartCoroutine(MoveIn(items[currentItem], new Vector2(0.5f, 0.5f) - dir, true));
-        StartCoroutine(MoveIn(items[next], new Vector2(0.5f, 0.5f)));
-        currentItem = next;
+        StartCoroutine(MoveIn(items[m_Current], new Vector2(0.5f, 0.5f) - dir, m_InCurve, m_InDuration, true));
+        StartCoroutine(MoveIn(items[next], new Vector2(0.5f, 0.5f), m_OutCurve, m_OutDuration, f));
+        m_Current = next;
     }
 
     public void NextItem()
     {
-        int next = currentItem + 1;
-        if (next >= items.Length && !loop) return;
-        else next %= items.Length;
+        if (m_Current == items.Length - 1 && !loop)
+        {
+            Debug.Log("there's no next item in " + this.ToString());
+            return;
+        }
+        int next = m_Current + 1;
+        if (next >= items.Length) next %= items.Length;
         SwitchItem(next, sliderDir);
     }
 
     public void PrevItem()
     {
-        int next = currentItem - 1;
-        if (next < 0 && !loop) return;
-        else next = (next + items.Length) % items.Length;
+        if (m_Current == 0 && !loop)
+        {
+            Debug.Log("there's no previous item in" + this.ToString());
+            return;
+        }
+        int next = m_Current - 1;
+        if (next < 0) next = (next + items.Length) % items.Length;
         SwitchItem(next, -sliderDir);
     }
 
-
-    IEnumerator MoveIn(RectTransform rect, Vector2 target, bool disableOnArrival = false)
+    private void FinishAnim()
     {
-        while (Vector2.Distance(rect.anchorMin, target) > 0.01f)
+        StopAllCoroutines();
+        foreach (RectTransform i in items) i.gameObject.SetActive(false);
+        items[m_Current].gameObject.SetActive(true);
+        items[m_Current].anchorMin = items[m_Current].anchorMax = new Vector2(0.5f, 0.5f);
+    }
+
+    IEnumerator MoveIn(RectTransform rect, Vector2 target, AnimationCurve curve, float duration, bool disableOnArrival = false)
+    {
+        Vector2 startPos = rect.anchorMin;
+        float startTime = Time.time;
+        float currentTime = startTime;
+        while (currentTime < startTime + duration)
         {
-            rect.anchorMin = rect.anchorMax = Vector2.MoveTowards(rect.anchorMin, target, moveSpeed);
+            float normal = curve.Evaluate((currentTime - startTime) / duration);
+            rect.anchorMin = rect.anchorMax = (1.0f - normal) * startPos + normal * target;
+            currentTime = Time.time;
             yield return 0;
         }
         rect.anchorMin = rect.anchorMax = target;

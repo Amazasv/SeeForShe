@@ -2,14 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEditor;
 public class LevelManager : MonoBehaviour
 {
+    public enum Mode
+    {
+        Normal,
+        Debug
+    }
+
     [SerializeField]
-    private LevelBase startScene = null;
+    private LevelBase m_StartScene = null;
+    public LevelBase startScene
+    {
+        get { return m_StartScene; }
+        set { m_StartScene = value; }
+    }
 
     private List<LevelBase> m_LevelBases = new List<LevelBase>();
-    //public UnityEvent OnSceneChange;
 
+    public Mode mode;
     private void Start()
     {
         EnsureValidState();
