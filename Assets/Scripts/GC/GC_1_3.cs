@@ -1,45 +1,48 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-[RequireComponent(typeof(JumpScene))]
 public class GC_1_3 : MonoBehaviour
 {
     [SerializeField]
-    private List<GameObject> portraits=new List<GameObject>();
+    private ObjectLevel nextScene = null;
     [SerializeField]
-    private List<Draggable> items=new List<Draggable>();
+    private SpriteRenderer targetSprite=null;
+    [SerializeField]
+    private Sprite[] sprites=null;
+    [SerializeField]
+    private List<Draggable> items = new List<Draggable>();
     [SerializeField]
     private List<GameObject> emptyHanger = new List<GameObject>();
 
     private int currentStep = 0;
-    private JumpScene press = null;
-
-    private void Awake()
-    {
-        press = GetComponent<JumpScene>();
-    }
 
     private void OnEnable()
     {
         UpdateVisual();
     }
 
-    public void DressUp()
+    public void DressUp(int index)
     {
-        currentStep++;
-        UpdateVisual();
-        if (currentStep == items.Count)
-        {
-            press.ForceTransition();
-        }
+        Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y);
+        Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint);
+        curPosition.Set(curPosition.x, curPosition.y, 0.0f);
+        if (GetComponent<BoxCollider2D>().bounds.Contains(curPosition))
+            if (index == currentStep)
+            {
+                currentStep++;
+                UpdateVisual();
+                if (currentStep == items.Count)
+                {
+                    LevelManager.instance.SetLevel(nextScene);
+                }
+            }
     }
 
     public void DropCheck(Draggable item)
     {
         if (items.IndexOf(item) == currentStep)
         {
-            DressUp();
+            DressUp(0);
         }
     }
 
@@ -47,8 +50,6 @@ public class GC_1_3 : MonoBehaviour
     {
         for (int i = 0; i < items.Count; i++) items[i].gameObject.SetActive(i >= currentStep);
         for (int i = 0; i < emptyHanger.Count; i++) emptyHanger[i].SetActive(i < currentStep);
-        foreach (GameObject tmp in portraits) tmp.SetActive(false);
-        if (currentStep < portraits.Count)
-            portraits[currentStep].SetActive(true);
+        targetSprite.sprite = sprites[currentStep];
     }
 }

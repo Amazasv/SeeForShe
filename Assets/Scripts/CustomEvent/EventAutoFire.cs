@@ -11,6 +11,13 @@ namespace CustomEvent
         private EventBase next = null;
         [SerializeField]
         private float delay = 2.0f;
+        [SerializeField]
+        private bool isEnter = false;
+
+        private void Start()
+        {
+            if (isEnter) Fire();
+        }
         public void Fire()
         {
             StartCoroutine(InvokeNext());

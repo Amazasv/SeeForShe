@@ -11,7 +11,7 @@ namespace CustomEvent
         private string m_FlagName = "";
         public void Fire()
         {
-            GameManager.Instance.globalFlags[m_FlagName] = true;
+            GameManager.Instance.flags[m_FlagName] = true;
         }
     }
 }

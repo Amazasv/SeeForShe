@@ -44,10 +44,25 @@ public class GC_3_10 : MonoBehaviour
         }
     }
 
-    public void Check()
+    public bool Check()
+    {
+        return (currentSelected[0] == 0 && currentSelected[1] == 0 && currentSelected[2] == 0);
+    }
+
+
+    public void Confirm()
     {
         for (int i = 0; i < currentSelected.Length; i++)
             if (currentSelected[i] == -1) return;
-        GetComponent<JumpChapter>().ForceTransition();
+        if (Check())
+        {
+            GameManager.AddRecord("recall_yes");
+        }
+        else
+        {
+            GameManager.AddRecord("recall_no");
+        }
+        GameManager.SetAchievement("pass_c3");
+        LevelManager.instance.SetChapter(4);
     }
 }

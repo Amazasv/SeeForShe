@@ -9,15 +9,16 @@ public class PhotoGameController : GCSequence
     private Animation lipTransition = null;
     [SerializeField]
     private Sprite[] photos = null;
-
-    private CameraManager cameraManager = null;
-    private MyCamera myCamera = null;
-    private void Awake()
-    {
-        myCamera = GetComponentInChildren<MyCamera>();
-        cameraManager = GetComponentInChildren<CameraManager>(true);
-
-    }
+    [SerializeField]
+    private SpriteRenderer source = null;
+    [SerializeField]
+    private SpriteRenderer blank = null;
+    [SerializeField]
+    private Image photo = null;
+    [SerializeField]
+    private PlayableDirector printAnim = null;
+    [SerializeField]
+    private GameObject button=null;
 
     private void Start()
     {
@@ -27,27 +28,41 @@ public class PhotoGameController : GCSequence
 
     public void Cheese()
     {
-        GameObject newPhoto = myCamera.Print();
-        cameraManager.gameObject.SetActive(true);
-        cameraManager.Print(newPhoto);
+        if (printAnim.state == PlayState.Playing) return;
+        printAnim.gameObject.SetActive(true);
+        photo.sprite = source.sprite;
+        SetPhotoPos();
+        printAnim.Play();
         CurrentStep++;
         if (CurrentStep < 3)
         {
-            myCamera.SetImage(photos[CurrentStep]);
+            source.sprite = photos[CurrentStep];
         }
         else if (CurrentStep == 3)
         {
-            myCamera.gameObject.SetActive(false);
-            
+            source.gameObject.SetActive(false);
+            button.SetActive(false);
+            blank.gameObject.SetActive(false);
             lipTransition.gameObject.SetActive(true);
-            cameraManager.director.stopped += Director_stopped;
+            Invoke(nameof(StartLipGame), (float)printAnim.duration);
         }
-        
     }
 
-    private void Director_stopped(PlayableDirector obj)
+    private void SetPhotoPos()
+    {
+        Vector2 blankViewPos = Camera.main.WorldToScreenPoint(blank.transform.position);
+        Vector2 sourceViewPos = Camera.main.WorldToScreenPoint(source.transform.position);
+        Vector2 offset = sourceViewPos - blankViewPos;
+        float xScale= source.bounds.size.x/blank.bounds.size.x;
+        float yScale = source.bounds.size.y / blank.bounds.size.y;
+        photo.transform.localScale = new Vector3(xScale, yScale, 1.0f);
+        //offset.Scale(new Vector2(xScale, yScale));
+        photo.transform.localPosition = Vector2.zero;
+        photo.transform.Translate(offset);
+    }
+
+    private void StartLipGame()
     {
         lipTransition.Play();
-        myCamera.transform.parent.gameObject.SetActive(false);
     }
 }

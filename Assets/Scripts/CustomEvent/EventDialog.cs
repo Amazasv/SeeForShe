@@ -18,7 +18,7 @@ namespace CustomEvent
         public void Fire()
         {
             talking.Speak(content);
-            if (!dontDestroy) talking.ForceClear(existTime);
+            if (!dontDestroy) talking.ClearAll(existTime);
         }
     }
 }

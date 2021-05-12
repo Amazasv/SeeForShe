@@ -18,7 +18,7 @@ public class MonitorManager : MonoBehaviour
         {
             btns[i].SetActive(GameManager.Instance.time >= timeLimit[i]);
         }
-        btns[1].SetActive(GameManager.Instance.globalFlags["catch"] || GameManager.Instance.globalFlags["get_help"]);
-        btns[2].SetActive(GameManager.Instance.globalFlags["gentle_speaking"]);
+        btns[1].SetActive(GameManager.Instance.flags["catch"] || GameManager.Instance.flags["get_help"]);
+        btns[2].SetActive(GameManager.Instance.flags["gentle_speaking"]);
     }
 }

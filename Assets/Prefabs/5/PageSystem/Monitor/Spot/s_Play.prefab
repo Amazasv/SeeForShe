@@ -67,6 +67,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   next: {fileID: 3943599265803235521}
   delay: 2
+  isEnter: 0
 --- !u!114 &7230166731130968443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,9 +132,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7e347c88b888ae4cb314a3c2c24c352, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubblePrefab: {fileID: 1215267685361239643, guid: 28b6f8afd8634f345a299c9389a6b562,
+  m_bubblePrefab: {fileID: 1215267685361239643, guid: 28b6f8afd8634f345a299c9389a6b562,
     type: 3}
-  parent: {fileID: 9052066533334091039}
+  m_parent: {fileID: 9052066533334091039}
+  m_offset: {x: 0, y: 0}
 --- !u!1 &1210106601110619599
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,6 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   next: {fileID: 3157919456841294811}
   delay: 2
+  isEnter: 0
 --- !u!114 &7183480206459043727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,6 +287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   next: {fileID: 228799524091647429}
   delay: 2
+  isEnter: 0
 --- !u!114 &8930281458099719902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,6 +371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   next: {fileID: 3044226762723646219}
   delay: 2
+  isEnter: 0
 --- !u!114 &4286245670807938444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -450,6 +455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   next: {fileID: 8747312098958920450}
   delay: 2
+  isEnter: 0
 --- !u!114 &1348741889600646261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -584,6 +590,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   next: {fileID: 1867689196646457974}
   delay: 2
+  isEnter: 0
 --- !u!114 &9071633665365807517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -648,9 +655,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7e347c88b888ae4cb314a3c2c24c352, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubblePrefab: {fileID: 6084307465005091583, guid: 326229dc6121b304da3ec92b02b5ede7,
+  m_bubblePrefab: {fileID: 6084307465005091583, guid: 326229dc6121b304da3ec92b02b5ede7,
     type: 3}
-  parent: {fileID: 3365164356553675671}
+  m_parent: {fileID: 3365164356553675671}
+  m_offset: {x: 0, y: 0}
 --- !u!1001 &3902644672781844128
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -899,6 +907,16 @@ PrefabInstance:
         type: 3}
       propertyPath: clueIndex
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3576956066645935233, guid: a5b5fb889741e1b419b919e5acc7df10,
+        type: 3}
+      propertyPath: OnConfirm.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2203003142496108047}
+    - target: {fileID: 3576956066645935233, guid: a5b5fb889741e1b419b919e5acc7df10,
+        type: 3}
+      propertyPath: OnConfirm.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: InvokeEvent
       objectReference: {fileID: 0}
     - target: {fileID: 4357919177201744978, guid: a5b5fb889741e1b419b919e5acc7df10,
         type: 3}

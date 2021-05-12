@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(JumpScene))]
-
 public class GC_1_1 : GCSequence
 {
+    [SerializeField]
+    private ObjectLevel nextScene=null;
     [SerializeField]
     private GameObject[] Info2Spawn = null;
     [SerializeField]
@@ -47,7 +47,7 @@ public class GC_1_1 : GCSequence
             }
         }
         if (CurrentStep == Info2Spawn.Length - 1 && infoManager.transform.childCount == 0)
-            jump.ForceTransition();
+            LevelManager.instance.SetLevel(nextScene);
     }
 
     protected override void OnSwitchIn(int index)

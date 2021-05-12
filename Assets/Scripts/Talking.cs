@@ -5,28 +5,32 @@ using UnityEngine.UI;
 public class Talking : MonoBehaviour
 {
     [SerializeField]
-    private GameObject bubblePrefab = null;
+    private GameObject m_bubblePrefab = null;
     [SerializeField]
-    private Transform parent = null;
+    private Transform m_parent = null;
+    [SerializeField]
+    private Vector2 m_offset = Vector2.zero;
 
-    private List<GameObject> bubbleList = new List<GameObject>();
+    private readonly List<GameObject> m_bubbleList = new List<GameObject>();
 
     private void OnEnable()
     {
-        ForceClear();
+        ClearAll();
     }
 
     public void Speak(string content)
     {
-        GameObject newBubble = Instantiate(bubblePrefab, parent);
-        newBubble.GetComponentInChildren<Text>().text = content;
-        bubbleList.Add(newBubble);
+        GameObject newBubble = Instantiate(m_bubblePrefab, m_parent);
+        newBubble.transform.Translate(m_offset);
+        Text text = newBubble.GetComponentInChildren<Text>();
+        if (text) text.text = content;
+        else Debug.LogWarning(newBubble.name + " has no Text Component");
+        m_bubbleList.Add(newBubble);
     }
 
-    public void ForceClear(float delay = 0.0f)
+    public void ClearAll(float delay = 0.0f)
     {
-        foreach (GameObject tmp in bubbleList) Destroy(tmp, delay);
-        bubbleList.Clear();
+        foreach (GameObject tmp in m_bubbleList) Destroy(tmp, delay);
+        m_bubbleList.Clear();
     }
-
 }

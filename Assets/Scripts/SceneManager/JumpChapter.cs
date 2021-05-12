@@ -7,23 +7,22 @@ public class JumpChapter : MonoBehaviour
     [SerializeField]
     private int index = 0;
 
-    private LevelBase levelBase = null;
+    private ObjectLevel levelBase = null;
 
     private void Awake()
     {
-        levelBase = GetComponentInParent<LevelBase>();
+        levelBase = GetComponentInParent<ObjectLevel>();
     }
 
     private void InstantTrans(UnityEngine.Playables.PlayableDirector obj)
     {
-        if (levelBase.BGM) levelBase.BGM.Stop();
         levelBase.outDirector.stopped -= InstantTrans;
-        GameManager.Instance.SwitchChapter(index);
+        GameManager.SwitchChapter(index);
     }
 
     public void ForceTransition()
     {
-        levelBase.OutTransition();
-        levelBase.outDirector.stopped += InstantTrans;
+        //levelBase.OutTransition();
+        //levelBase.outDirector.stopped += InstantTrans;
     }
 }

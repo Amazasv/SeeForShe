@@ -6,30 +6,30 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Chap.0.unity
+    path: Assets/MainScene/Chap.0.unity
     guid: d8dc70b40652f0a4aa959b059c46e02b
   - enabled: 1
-    path: Assets/Scenes/Chap.1.unity
+    path: Assets/MainScene/Chap.1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Chap.2.unity
+    path: Assets/MainScene/Chap.2.unity
     guid: 83f2b3513cf7b2c4399a290723878948
   - enabled: 1
-    path: Assets/Scenes/Chap.3.unity
+    path: Assets/MainScene/Chap.3.unity
     guid: 6d161b5c31fdc3e4182c352a06e23cfa
   - enabled: 1
-    path: Assets/Scenes/Chap.4.unity
+    path: Assets/MainScene/Chap.4.unity
     guid: e842358ef6026b94a96efaf82de35ca5
   - enabled: 1
-    path: Assets/Scenes/Chap.5.unity
+    path: Assets/MainScene/Chap.5.unity
     guid: 26ae4de1f9c0bc447ad342f2e55376c1
   - enabled: 1
-    path: Assets/Scenes/Chap.6.unity
+    path: Assets/MainScene/Chap.6.unity
     guid: 16f8ccc2a51893145a0d7c136b39e584
   - enabled: 1
-    path: Assets/Scenes/Chap.7.unity
+    path: "Assets/MainScene/Chap.7\u5E9F\u6848.unity"
     guid: dbc516c5bb4e3e44aa9717c8acc63eba
   - enabled: 1
-    path: Assets/Scenes/Chap.8.unity
+    path: Assets/MainScene/Chap.8.unity
     guid: a73049f988c64c84caeb3f1bb9adccb7
   m_configObjects: {}

@@ -2,30 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-[RequireComponent(typeof(JumpScene))]
 public class GC_2_2 : MonoBehaviour
 {
+    [SerializeField]
+    private ObjectLevel nextScene = null;
     [SerializeField]
     private float m_value = 0.33f;
     [SerializeField]
     private float stepLength = 0.05f;
     [SerializeField]
     private float dropSpeed = 0.05f;
-
     [SerializeField]
     private Slider processBar = null;
     [SerializeField]
-    private Slider ImageBar = null;
-    [SerializeField]
     private GameObject hint = null;
 
+    [SerializeField]
+    private GameObject girl = null;
+    [SerializeField]
+    private GameObject boy = null;
+
     private Animator[] anims = null;
-    private JumpScene pressAnywhere = null;
 
 
     private void Awake()
     {
-        pressAnywhere = GetComponent<JumpScene>();
         anims = GetComponentsInChildren<Animator>();
     }
 
@@ -49,18 +50,18 @@ public class GC_2_2 : MonoBehaviour
     private void UpdateVisuals()
     {
         if (processBar) processBar.value = m_value;
-        if (ImageBar) ImageBar.value = m_value;
+        girl.transform.position = boy.transform.position + new Vector3(-2.0f, 0.0f, 0.0f) + new Vector3(-5.0f, 0.0f, 0.0f) * (1 - m_value);
     }
 
     private void GameFailed()
     {
         SwitchAllAnimation(false);
-        pressAnywhere.ForceTransition();
+        LevelManager.instance.SetLevel(nextScene);
     }
 
     private void GameVictory()
     {
-        GameManager.Instance.globalFlags["catch"] = true;
+        GameManager.Instance.flags["catch"] = true;
         SwitchAllAnimation(false);
         if (hint) hint.SetActive(true);
     }

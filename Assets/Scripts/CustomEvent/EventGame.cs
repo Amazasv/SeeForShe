@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 namespace CustomEvent
 {
     [RequireComponent(typeof(EventBase))]
@@ -12,11 +13,12 @@ namespace CustomEvent
         [SerializeField]
         private GameObject gamePrefab = null;
         [SerializeField]
-        private EventBase next = null;
-        [SerializeField]
         private Transform caster = null;
         [SerializeField]
         private GameObject DialogPrefab = null;
+
+        [SerializeField]
+        private UnityEvent OnVictory = new UnityEvent();
 
         private GameObject lastGame;
         private GameObject textObject;
@@ -34,7 +36,7 @@ namespace CustomEvent
         {
             Destroy(textObject);
             Destroy(lastGame);
-            GetComponentInParent<EventChainSystem>().FireEvent(next, 0.0f);
+            OnVictory.Invoke();
         }
     }
 }

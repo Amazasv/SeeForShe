@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-
+[RequireComponent(typeof(LineRenderer))]
 public class DotsGC : MonoBehaviour
 {
     public class NodesNavigation
@@ -26,11 +26,8 @@ public class DotsGC : MonoBehaviour
             Position = p;
             NodeOnUp = NodeOnDown = NodeOnLeft = NodeOnRight = null;
         }
-        ~NodesNavigation()
-        {
-            Destroy(icon);
-        }
     }
+
     [SerializeField]
     private GameObject prefab = null;
 
@@ -38,8 +35,8 @@ public class DotsGC : MonoBehaviour
     private Vector2 gridSize = Vector2.zero;
     [SerializeField]
     private Vector2 spacing = Vector2.zero;
-    //[SerializeField]
-    //private Vector2 gap = Vector2.zero;
+    [SerializeField]
+    private float snap = 0.3f;
     [SerializeField]
     private int maxInRow = 3;
     [SerializeField]
@@ -51,80 +48,153 @@ public class DotsGC : MonoBehaviour
 
     public UnityEvent OnVictory;
 
+    public NodesNavigation currentNode
+    {
+        get { return m_CurrentNode; }
+        set
+        {
+            if (m_CurrentNode == value) return;
+            if (m_CurrentNode != null && m_CurrentNode.icon)
+            {
+                Animator anim = m_CurrentNode.icon.GetComponent<Animator>();
+                if (anim) anim.SetBool("Beat", false);
+            }
+            if (value != null && value.icon)
+            {
+                Animator anim = value.icon.GetComponent<Animator>();
+                if (anim) anim.SetBool("Beat", true);
+            }
+            m_CurrentNode = value;
+        }
+    }
+
     private LineRenderer lineRenderer = null;
-    private List<NodesNavigation> nodes = new List<NodesNavigation>();
-    private List<NodesNavigation> pathRecord = new List<NodesNavigation>();
-    private NodesNavigation currentNode = null;
+    private readonly List<NodesNavigation> nodes = new List<NodesNavigation>();
+    private readonly List<NodesNavigation> pathRecord = new List<NodesNavigation>();
+    private NodesNavigation m_CurrentNode = null;
     private NodesNavigation startNode = null;
     private NodesNavigation endNode = null;
-    private void OnEnable()
+
+
+    private void Awake()
     {
-        ClearList();
-        startNode = new NodesNavigation(startNodePosition);
-        endNode = new NodesNavigation(endNodePosition);
-
-        nodes.Add(startNode);
-        nodes.Add(endNode);
-        foreach (Vector2Int dot in defaultNodePosition) nodes.Add(new NodesNavigation(dot));
-
-
-        CreateVisuals();
-        CreateLinks();
-        startNode.icon.GetComponent<SpriteRenderer>().color = Color.blue;
-        endNode.icon.GetComponent<SpriteRenderer>().color = Color.green;
-
-        currentNode = startNode;
-        currentNode.icon.GetComponent<Animator>().SetBool("Beat", true);
         lineRenderer = GetComponent<LineRenderer>();
-        if (lineRenderer)
-        {
-            lineRenderer.positionCount = 1;
-            lineRenderer.SetPosition(0, startNode.icon.transform.position);
-        }
-        else Debug.Log("LineRenderer is missing");
+    }
+    private void Start()
+    {
+        CreateNode();
+        CreateLinks();
+        CreateVisuals();
+        InitGame();
     }
 
-    public void Swipe(SwipeArea.DraggedDirection dir)
+    private void InitGame()
     {
-        switch (dir)
-        {
-            case SwipeArea.DraggedDirection.Up:
-                if (currentNode.NodeOnUp != null)
-                {
-                    Jump(currentNode.NodeOnUp);
-                }
-                break;
-            case SwipeArea.DraggedDirection.Down:
-                if (currentNode.NodeOnDown != null)
-                {
-                    Jump(currentNode.NodeOnDown);
-                }
-                break;
-            case SwipeArea.DraggedDirection.Right:
-                if (currentNode.NodeOnRight != null)
-                {
-                    Jump(currentNode.NodeOnRight);
-                }
-                break;
-            case SwipeArea.DraggedDirection.Left:
-                if (currentNode.NodeOnLeft != null)
-                {
-                    Jump(currentNode.NodeOnLeft);
-                }
-                break;
-            default:
-                break;
-        }
+        pathRecord.Clear();
+        currentNode = startNode;
+        pathRecord.Add(startNode);
     }
 
-    private void ClearList()
+    private void CreateNode()
     {
+        nodes.Add(startNode = new NodesNavigation(startNodePosition));
+        nodes.Add(endNode = new NodesNavigation(endNodePosition));
+        foreach (Vector2Int dot in defaultNodePosition) nodes.Add(new NodesNavigation(dot));
+    }
+
+    private void UpdateVisuals()
+    {
+        if (Input.GetMouseButton(0) || Input.touchCount > 0)
+        {
+            lineRenderer.enabled = true;
+            lineRenderer.positionCount = pathRecord.Count + 1;
+            for (int i = 0; i < pathRecord.Count; i++)
+                lineRenderer.SetPosition(i, pathRecord[i].icon.transform.position);
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            lineRenderer.SetPosition(pathRecord.Count, mousePos);
+        }
+        else
+        {
+            lineRenderer.enabled = false;
+        }
+
+    }
+
+    //public void Swipe(SwipeArea.DraggedDirection dir)
+    //{
+    //    switch (dir)
+    //    {
+    //        case SwipeArea.DraggedDirection.Up:
+    //            if (m_CurrentNode.NodeOnUp != null)
+    //            {
+    //                Jump(m_CurrentNode.NodeOnUp);
+    //            }
+    //            break;
+    //        case SwipeArea.DraggedDirection.Down:
+    //            if (m_CurrentNode.NodeOnDown != null)
+    //            {
+    //                Jump(m_CurrentNode.NodeOnDown);
+    //            }
+    //            break;
+    //        case SwipeArea.DraggedDirection.Right:
+    //            if (m_CurrentNode.NodeOnRight != null)
+    //            {
+    //                Jump(m_CurrentNode.NodeOnRight);
+    //            }
+    //            break;
+    //        case SwipeArea.DraggedDirection.Left:
+    //            if (m_CurrentNode.NodeOnLeft != null)
+    //            {
+    //                Jump(m_CurrentNode.NodeOnLeft);
+    //            }
+    //            break;
+    //        default:
+    //            break;
+    //    }
+    //}
+
+    private void Update()
+    {
+        Debug.Log(pathRecord[0].icon.transform.position);
+        if (Input.GetMouseButton(0) || Input.touchCount > 0)
+        {
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            NodesNavigation near = GetNearestNode(mousePos);
+            if (near != null &&
+                (near == currentNode.NodeOnDown
+               || near == currentNode.NodeOnLeft
+               || near == currentNode.NodeOnRight
+               || near == currentNode.NodeOnUp))
+                Jump(near);
+        }
+        else
+        {
+            Check();
+            while (Undo()) ;
+        }
+        UpdateVisuals();
+    }
+
+    private NodesNavigation GetNearestNode(Vector2 pos)
+    {
+        NodesNavigation ans = startNode;
+        float dis = Vector2.Distance(ans.icon.transform.position, pos);
         foreach (NodesNavigation dot in nodes)
-        {
-            Destroy(dot.icon);
-            dot.icon = null;
-        }
-        nodes.Clear();
+            if (Vector2.Distance(dot.icon.transform.position, pos) < dis)
+            {
+                ans = dot;
+                dis = Vector2.Distance(dot.icon.transform.position, pos);
+            }
+        if (dis < snap)
+            return ans;
+        else return null;
+    }
+
+    private void Check()
+    {
+        if (pathRecord.Count == nodes.Count) 
+            OnVictory.Invoke();
+        else return;
     }
 
     private void CreateVisuals()
@@ -133,13 +203,15 @@ public class DotsGC : MonoBehaviour
         {
             foreach (NodesNavigation dot in nodes)
             {
-                dot.icon = GameObject.Instantiate(prefab, transform);
+                dot.icon = Instantiate(prefab, transform);
                 Transform trans = dot.icon.GetComponent<Transform>();
                 trans.position = transform.position;
                 Vector3 t = dot.Position * (gridSize + spacing) * new Vector2(1.0f, -1.0f);
                 trans.position += t;
                 trans.position -= (maxInRow - 1) * (gridSize.x + spacing.x) * Vector3.right / 2;
             }
+            startNode.icon.GetComponent<SpriteRenderer>().color = Color.blue;
+            endNode.icon.GetComponent<SpriteRenderer>().color = Color.green;
         }
     }
 
@@ -181,38 +253,27 @@ public class DotsGC : MonoBehaviour
 
     private void Jump(NodesNavigation next)
     {
-        if (next == endNode)
-        {
-            if (pathRecord.Count == nodes.Count - 2) OnVictory.Invoke();
-            else return;
-        }
-        currentNode.icon.GetComponent<Animator>().SetBool("Beat", false);
-        next.icon.GetComponent<Animator>().SetBool("Beat", true);
-        pathRecord.Add(currentNode);
         if (currentNode.NodeOnDown != null) currentNode.NodeOnDown.NodeOnUp = currentNode.NodeOnUp;
         if (currentNode.NodeOnUp != null) currentNode.NodeOnUp.NodeOnDown = currentNode.NodeOnDown;
         if (currentNode.NodeOnLeft != null) currentNode.NodeOnLeft.NodeOnRight = currentNode.NodeOnRight;
         if (currentNode.NodeOnRight != null) currentNode.NodeOnRight.NodeOnLeft = currentNode.NodeOnLeft;
-        lineRenderer.positionCount++;
-        lineRenderer.SetPosition(lineRenderer.positionCount - 1, next.icon.transform.position);
         currentNode = next;
+        pathRecord.Add(m_CurrentNode);
     }
 
-    public void Undo()
+    public bool Undo()
     {
-        NodesNavigation prev;
-        if (pathRecord.Count > 0)
+        if (pathRecord.Count > 1)
         {
-            prev = pathRecord[pathRecord.Count - 1];
-            prev.icon.GetComponent<Animator>().SetBool("Beat", true);
-            currentNode.icon.GetComponent<Animator>().SetBool("Beat", false);
-            if (currentNode.NodeOnDown != null) currentNode.NodeOnDown.NodeOnUp = currentNode;
-            if (currentNode.NodeOnUp != null) currentNode.NodeOnUp.NodeOnDown = currentNode;
-            if (currentNode.NodeOnLeft != null) currentNode.NodeOnLeft.NodeOnRight = currentNode;
-            if (currentNode.NodeOnRight != null) currentNode.NodeOnRight.NodeOnLeft = currentNode;
-            lineRenderer.positionCount--;
+            NodesNavigation prev = pathRecord[pathRecord.Count - 2];
+            if (prev.NodeOnDown != null) prev.NodeOnDown.NodeOnUp = prev;
+            if (prev.NodeOnUp != null) prev.NodeOnUp.NodeOnDown = prev;
+            if (prev.NodeOnLeft != null) prev.NodeOnLeft.NodeOnRight = prev;
+            if (prev.NodeOnRight != null) prev.NodeOnRight.NodeOnLeft = prev;
+            pathRecord.Remove(currentNode);
             currentNode = prev;
-            pathRecord.Remove(prev);
+            return true;
         }
+        else return false;
     }
 }

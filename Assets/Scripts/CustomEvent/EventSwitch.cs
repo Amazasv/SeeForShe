@@ -54,7 +54,7 @@ namespace CustomEvent
             btnCanvas.gameObject.SetActive(false);
             foreach (GameObject tmp in optionList) Destroy(tmp);
             optionList.Clear();
-            GetComponentInParent<EventChainSystem>().FireEvent(target, 0.0f);
+            target.InvokeEvent();
             //EventChainSystem.Instance.FireEvent(target, 0.0f);
         }
     }

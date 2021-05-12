@@ -37,7 +37,7 @@ public class GC_5 : MonoBehaviour
 
     private void CheckTime()
     {
-        if (GameManager.Instance.time >= maxTime) GameManager.Instance.SwitchChapter(6);
+        if (GameManager.Instance.time >= maxTime) GameManager.SwitchChapter(6);
     }
 
     public void SetFlag(int index, bool value)

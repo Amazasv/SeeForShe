@@ -9,7 +9,7 @@ public class GC_1_6 : MonoBehaviour
     [SerializeField]
     private GameObject appScreen = null;
     [SerializeField]
-    private EventBase wrongEvent = null;
+    private Talking wrongEvent = null;
     [SerializeField]
     private float cd = 1.0f;
 
@@ -24,7 +24,7 @@ public class GC_1_6 : MonoBehaviour
     {
         if (Time.time - lastSpawn >= cd)
         {
-            wrongEvent.InvokeEvent();
+            wrongEvent.Speak("");
             lastSpawn = Time.time;
         }
     }
